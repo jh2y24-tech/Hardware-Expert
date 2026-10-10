@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>철물박사 · 제품 교육 핸드북</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet" />
+<style>
+:root{
+  --brand:#FBC324;--brand-2:#D9A300;--brand-tint:#FFF3CC;--brand-tint2:#FFE48A;
+  --ink:#1A1A1A;--ink-soft:#5E5A4E;--paper:#FFF9E6;--surface:#FFFFFF;--line:#EADFB8;
+  --dark:#1A1A1A;--warn-bg:#FDF3E7;--warn-bd:#F0D3AC;--signal:#D97A16;--focus:#1573E6;
+  --r-lg:20px;--r-md:14px;--shadow-card:0 1px 2px rgba(0,0,0,.05),0 10px 30px rgba(120,90,0,.10);
+  --shadow-pop:0 24px 70px rgba(0,0,0,.30);--mono:ui-monospace,"IBM Plex Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:"GmarketSans","Pretendard Variable",Pretendard,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font-family:inherit}
+/* header */
+.hero{background:var(--brand);background-image:radial-gradient(circle at 12% 20%,rgba(255,255,255,.35) 0 2px,transparent 3px),radial-gradient(circle at 78% 60%,rgba(255,255,255,.3) 0 2px,transparent 3px);background-size:90px 90px}
+.hero-inner{max-width:1180px;margin:0 auto;padding:22px clamp(14px,3.5vw,34px) 20px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.hero .kicker{font-size:clamp(13px,2vw,16px);font-weight:700}
+.hero h1{font-size:clamp(34px,7vw,60px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--dark);text-shadow:0 2px 0 rgba(255,255,255,.55)}
+.hero h1 b{color:var(--dark);-webkit-text-stroke:0}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.badge{background:var(--dark);color:#fff;font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:999px}
+.badge b{color:var(--brand)}
+.hero-img{max-width:1180px;margin:0 auto;display:block;width:100%}
+.hero-img+.hero-inner .kicker,.hero-img+.hero-inner h1{display:none}
+.hero-img+.hero-inner{padding-top:4px;padding-bottom:14px}
+.hero-img{background:var(--brand)}
+@media (max-width:700px){.hero-img{display:none}.hero-img+.hero-inner .kicker,.hero-img+.hero-inner h1{display:block}.hero-img+.hero-inner{padding-top:22px}}
+.hero-img img{display:block;width:100%;height:auto}
+/* sticky bar */
+.bar{background:var(--paper)}
+.bar-inner{max-width:1180px;margin:0 auto;padding:14px clamp(14px,3.5vw,34px) 4px}
+.searchwrap{display:flex;align-items:center;background:var(--surface);border:2px solid var(--line);border-radius:14px;box-shadow:var(--shadow-card);transition:border-color .16s}
+.searchwrap:focus-within{border-color:var(--dark)}
+.searchwrap svg{width:22px;height:22px;margin-left:16px;flex:none;color:var(--ink-soft)}
+.searchwrap input{flex:1;border:0;outline:0;background:transparent;font-size:clamp(15px,2vw,17px);font-weight:500;padding:14px;color:var(--ink);min-width:0;font-family:inherit}
+.searchwrap .x{display:none;border:0;background:var(--brand-tint);color:var(--dark);width:32px;height:32px;border-radius:50%;margin-right:10px;font-size:18px;cursor:pointer;flex:none}
+.searchwrap.on .x{display:grid;place-items:center}
+.tabs{display:flex;gap:8px;margin-top:12px}
+.tab{flex:1;display:flex;flex-direction:column;gap:2px;align-items:flex-start;border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:11px 16px;cursor:pointer;text-align:left;transition:all .15s}
+.tab b{font-size:15px;font-weight:800}
+.tab span{font-size:12px;color:var(--ink-soft);font-weight:500}
+.tab[aria-selected="true"]{background:var(--dark);border-color:var(--dark)}
+.tab[aria-selected="true"] b{color:var(--brand)}
+.tab[aria-selected="true"] span{color:#e6dfc3}
+.wrap{max-width:1180px;margin:0 auto;padding:12px clamp(14px,3.5vw,34px) 90px}
+.view{display:none}.view.on{display:block}
+/* catbar */
+.catbar{position:sticky;top:0;z-index:20;display:flex;gap:9px;padding:9px 2px 11px;margin-bottom:8px;background:var(--paper);box-shadow:0 7px 8px -7px rgba(0,0,0,.18);overflow-x:auto}
+.catbar::-webkit-scrollbar{display:none}
+.catbar button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1.5px solid var(--line);background:var(--surface);font-size:14px;font-weight:700;color:var(--ink-soft);padding:12px 18px;border-radius:12px;cursor:pointer;white-space:nowrap;flex:1}
+.catbar button .n{font-family:var(--mono);font-size:11px;font-weight:700;color:#9a937a;background:var(--paper);border-radius:20px;padding:1px 7px}
+.catbar button[aria-current="true"]{background:var(--brand);color:var(--dark);border-color:var(--dark);box-shadow:0 4px 14px rgba(120,90,0,.25)}
+.panel-head{display:flex;align-items:center;gap:13px;margin-bottom:4px}
+.panel-num{font-family:var(--mono);font-weight:800;font-size:13px;color:var(--brand);background:var(--dark);border-radius:9px;padding:7px 12px}
+.panel-title{font-size:clamp(23px,3.8vw,32px);font-weight:900;letter-spacing:-.02em}
+.panel-intro{font-size:15.5px;color:var(--ink-soft);line-height:1.7;margin:14px 0 18px;max-width:78ch}
+.count-line{font-family:var(--mono);font-size:12px;color:var(--ink-soft);font-weight:600;margin-bottom:18px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:18px}
+.pcard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;cursor:pointer;box-shadow:var(--shadow-card);transition:transform .16s,box-shadow .16s,border-color .16s;text-align:left;padding:0}
+.pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-pop);border-color:var(--dark)}
+.pcard:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.thumb{aspect-ratio:4/3;width:100%;background:#fff;border-bottom:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:contain;padding:12px}
+.thumb .ph{font-size:46px}
+.pcard-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:11px;flex:1}
+.pcard-name{font-size:18.5px;font-weight:800;letter-spacing:-.02em;line-height:1.3}
+.pcard-spec{align-self:flex-start;font-family:var(--mono);font-size:12px;font-weight:700;color:var(--dark);background:var(--brand-tint);border:1px solid var(--brand-tint2);padding:5px 11px;border-radius:8px}
+.pcard-use{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+.pcard-go{margin-top:auto;font-size:13px;font-weight:800}
+.empty{text-align:center;padding:70px 20px;color:var(--ink-soft)}
+.empty .big{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:6px}
+/* situation */
+.sit-intro{font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:22px;max-width:72ch}
+.sit-gt{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:800;margin-bottom:14px}
+.sit-gt::before{content:"";width:5px;height:18px;background:var(--brand);border:1px solid var(--dark);border-radius:3px}
+.sit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:28px}
+.sit-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 19px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:13px}
+.sit-q{font-size:15.5px;font-weight:700;line-height:1.5}
+.sit-ans{display:flex;flex-direction:column;gap:9px;border-top:1px dashed var(--line);padding-top:13px}
+.sit-lead{font-size:11.5px;font-weight:700;color:var(--ink-soft);letter-spacing:.03em}
+.rec button{border:0;background:var(--dark);color:var(--brand);font-size:13.5px;font-weight:800;padding:8px 14px;border-radius:9px;cursor:pointer}
+.why{font-size:13px;color:var(--ink-soft);line-height:1.55}
+/* search results */
+.sr-list{display:flex;flex-direction:column;gap:10px}
+.sr-item{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;cursor:pointer;box-shadow:var(--shadow-card);text-align:left;width:100%}
+.sr-item:hover{border-color:var(--dark)}
+.sr-cat{font-family:var(--mono);font-size:11px;font-weight:800;color:var(--brand);background:var(--dark);border-radius:6px;padding:4px 9px;flex:none}
+.sr-name{font-weight:800;font-size:15.5px}
+.sr-sub{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+.sr-go{margin-left:auto;font-weight:800}
+/* detail overlay */
+.overlay{position:fixed;inset:0;z-index:80;display:none;background:rgba(20,16,0,.6);backdrop-filter:blur(3px);align-items:flex-end;justify-content:center}
+.overlay.open{display:flex}
+.detail{background:var(--surface);width:100%;max-width:860px;max-height:94vh;overflow-y:auto;border-radius:var(--r-lg) var(--r-lg) 0 0;box-shadow:var(--shadow-pop);animation:up .26s cubic-bezier(.16,1,.3,1)}
+@keyframes up{from{transform:translateY(30px);opacity:.6}to{transform:none;opacity:1}}
+.detail-head{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);z-index:3;display:flex;justify-content:flex-end;padding:12px 12px 0}
+.detail-close{border:0;background:var(--brand);width:44px;height:44px;border-radius:50%;font-size:23px;color:var(--dark);cursor:pointer;font-weight:800}
+.detail-body{padding:2px clamp(18px,4vw,38px) 44px}
+.d-hero{width:100%;aspect-ratio:3/2;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:20px;padding:8px;display:block}
+.d-cat{font-size:13px;font-weight:800;color:var(--brand-2)}
+.d-name{font-size:clamp(24px,4vw,34px);font-weight:900;letter-spacing:-.02em;margin:4px 0 8px;line-height:1.15}
+.d-one{font-size:16px;font-weight:600;line-height:1.55;background:var(--brand-tint);border-left:5px solid var(--brand);border-radius:0 12px 12px 0;padding:14px 18px;margin:14px 0 22px}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.spec{border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.spec .k{font-size:12px;font-weight:700;color:var(--ink-soft)}
+.spec .v{font-family:var(--mono);font-weight:800;font-size:15px;margin-top:4px}
+.sec{margin-top:28px}
+.sec h3{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:900;margin-bottom:13px}
+.sec h3::before{content:"";width:5px;height:17px;background:var(--brand);border:1px solid var(--dark);border-radius:2px}
+.desc-p{font-size:15px;color:#3a362b;line-height:1.7}
+.video{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vnote{font-size:12.5px;color:var(--ink-soft);margin-top:8px}
+/* image captions grid */
+.fig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.fig{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.fig .img{aspect-ratio:4/3;background:var(--brand-tint);display:grid;place-items:center;overflow:hidden}
+.fig .img img{width:100%;height:100%;object-fit:cover}
+.fig .img .no{font-family:var(--mono);font-size:30px;font-weight:900;color:var(--dark)}
+.fig .cap{padding:12px 14px;font-size:13.5px;line-height:1.55;font-weight:600}
+.fig .cap b{display:inline-block;background:var(--dark);color:var(--brand);font-family:var(--mono);font-size:11.5px;padding:1px 8px;border-radius:6px;margin-right:6px}
+/* steps */
+.steps{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 18px 12px}
+.step{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #F3ECCF}
+.step:last-child{border-bottom:0}
+.step .no{flex:none;width:30px;height:30px;background:var(--dark);color:var(--brand);border-radius:8px;font-family:var(--mono);font-weight:800;font-size:14px;display:grid;place-items:center}
+.step .t{font-size:14.5px;line-height:1.6;padding-top:3px}
+/* dims */
+.dims{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.dims .row{display:grid;grid-template-columns:36% 64%;font-size:14.5px}
+.dims .row>div{padding:12px 16px;border-bottom:1px solid #F3ECCF}
+.dims .row>div:nth-child(odd){background:var(--brand-tint);font-weight:800}
+.dims .row>div:nth-child(even){font-family:var(--mono);font-weight:700}
+.dims .row:last-child>div{border-bottom:0}
+.cautions{list-style:none;background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:12px;padding:8px 16px}
+.cautions li{position:relative;padding:9px 0 9px 26px;font-size:14px;color:#5A4321;line-height:1.55;border-bottom:1px solid rgba(240,211,172,.5)}
+.cautions li:last-child{border-bottom:0}
+.cautions li::before{content:"!";position:absolute;left:0;top:9px;width:17px;height:17px;background:var(--signal);color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:grid;place-items:center}
+.confirm{background:#EEF4FF;border:1px solid #C7D8F7;border-radius:12px;padding:12px 16px;font-size:13.5px;color:#27406b;line-height:1.6;margin-top:10px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{font-size:12.5px;font-weight:700;background:var(--brand-tint);padding:6px 12px;border-radius:999px;border:1px solid var(--brand-tint2)}
+.to-top{position:fixed;right:18px;bottom:18px;z-index:90;width:52px;height:52px;border-radius:50%;border:0;background:var(--dark);color:var(--brand);font-size:22px;font-weight:900;box-shadow:0 6px 20px rgba(0,0,0,.35);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.to-top.show{opacity:1;pointer-events:auto}
+.foot{text-align:center;font-size:12.5px;color:var(--ink-soft);padding:30px 16px}
+@media (max-width:820px){.tab span{display:none}.catbar button{font-size:13px;padding:10px 12px}.pgrid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}.pcard-name{font-size:16px}.specs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-img"><img src="images/banner.jpg" alt="철물박사 TV · 인테리어, 생활용품, DIY 각종 정보 총집합" /></div>
+  <div class="hero-inner">
+    <div class="kicker">인테리어 · 생활용품 · DIY 각종 정보 총집합!</div>
+    <h1>철물박사 <b>TV</b></h1>
+    <div class="badges"><span class="badge">제품 교육 핸드북 · <b>STAFF</b></span><span class="badge">제품별 사용법 · <b>한눈에</b></span></div>
+  </div>
+</header>
+
+<div class="bar"><div class="bar-inner">
+  <div class="searchwrap" id="sw">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="q" type="search" autocomplete="off" placeholder="제품명 · 용도로 빠르게 찾기 (예: 자동바, 화물 고정)" aria-label="제품 검색" />
+    <button class="x" id="qx" aria-label="지우기">&times;</button>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tabLearn" role="tab" aria-selected="true"><b>과목별 학습</b><span>제품군별로 배우기</span></button>
+    <button class="tab" id="tabSit" role="tab" aria-selected="false"><b>상황별 응대</b><span>고객 상황 → 맞는 제품</span></button>
+  </div>
+</div></div>
+
+<main class="wrap">
+  <section class="view on" id="viewLearn"><div class="catbar" id="catbar"></div><div id="panel"></div></section>
+  <section class="view" id="viewSit"></section>
+  <section class="view" id="viewSearch"></section>
+</main>
+<div class="foot">철물박사 TV · 제품 교육 핸드북 · 제품이 추가되면 목록에 자동으로 반영됩니다.</div>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="제품 학습 카드">
+  <div class="detail" id="detail"><div class="detail-head"><button class="detail-close" id="close" aria-label="닫기">&times;</button></div><div class="detail-body" id="detailBody"></div></div>
+</div>
+<button id="toTop" class="to-top" aria-label="맨 위로">↑</button>
+
+<script>
+/* ===================================================================
+   제품 데이터 — 제품을 추가할 때는 이 배열에 객체 하나만 더 넣으면 됩니다.
+   이미지는 images/ 폴더에 올리고 파일명만 맞추면 자동 표시됩니다.
+   (이미지가 없으면 번호/아이콘으로 대체되어 깨지지 않습니다)
+   =================================================================== */
+var CATS=[
+  {key:"화물·운반용품",icon:"📦",intro:"짐을 싣고 묶고 고정하는 제품군입니다. 제품 설명은 상세페이지와 제조사·판매처 자료에 있는 내용만 담았습니다."}
+];
+var PRODUCTS=[
+ {
+  name:"자동바", full:"자동바 / 8m × 50mm / 인성", category:"화물·운반용품", icon:"🪢",
+  spec:"8m × 50mm · 라쳇 방식",
+  summary:"적재함 화물을 고정하는 라쳇(ratchet) 방식 결박 벨트. 손잡이를 올렸다 내리면 회전축이 돌며 벨트를 팽팽하게 조여 줍니다.",
+  one:"적재함 화물 고정용 라쳇 방식 자동바 — 손잡이를 올렸다 내리는 동작만 반복하면 벨트가 단단히 조여집니다.",
+  uses:"트럭·적재함 화물 고정, 짐 결박",
+  image:"images/jadongba.jpg", detailImage:"images/jadongba-detail.jpg",
+  stats:[{k:"규격",v:"8m × 50mm"},{k:"방식",v:"라쳇(손잡이 반복 작동)"},{k:"브랜드",v:"인성"},{k:"제조국",v:"기타국가"}],
+  parts:[
+    {name:"라쳇 본체(손잡이)",desc:"손잡이를 올렸다 내려 벨트를 감아 조이는 핵심 부분. 스프링 레바와 고정 락이 달려 있습니다."},
+    {name:"회전축",desc:"벨트 끝을 끼워 넣는 축. 손잡이 동작에 따라 돌며 벨트를 감습니다."},
+    {name:"스프링 레바 · 고정 락",desc:"당기면 고정 락이 풀려 감기/풀기 조작이 가능하고, 다시 걸면 조인 상태가 유지됩니다."},
+    {name:"고리(후크)",desc:"벨트 끝에 달린 고리. 고정 방법 1단계처럼 양쪽 끈의 고리를 걸어 사용합니다."},
+    {name:"벨트(폭 50mm)",desc:"총 기장 8m, 폭 50mm. 상세페이지 기준으로 라쳇 본체 쪽 벨트와 후크 쪽 벨트의 두 가닥으로 되어 있습니다."}
+  ],
+  dims:[
+    {k:"라쳇 본체 쪽 표기",v:"360 / 220 / 210 / 140 / 100 / 22 mm"},
+    {k:"후크 쪽 표기",v:"80 / 60 mm"},
+    {k:"벨트 폭",v:"50mm"},{k:"총 기장",v:"8m"}
+  ],
+  dimsNote:"각 숫자가 어느 부위의 치수인지는 아래 '상세 이미지'의 치수 도해에서 확인하세요. 사이즈는 측정 방법과 위치에 따라 조금의 편차가 있을 수 있습니다.",
+  video:{id:"yLvqPGw6rx4",start:62,note:"영상은 사용 장면이 나오는 1분 2초 지점부터 재생됩니다."},
+  fix:[
+    {t:"양쪽 끈 고리를 걸고 반대쪽 끈을 자동바 회전축에 끼워주세요.",img:"images/jadongba-fix-1.jpg"},
+    {t:"넣은 끈을 다시 위쪽 방향으로 올려 뺀 뒤 2개의 끈을 포개 줍니다. 나온 끈은 최대한 팽팽하게 당겨주세요.",img:"images/jadongba-fix-2.jpg"},
+    {t:"스프링 레바를 당긴 상태로 올려 고정 락을 풀어주세요.",img:"images/jadongba-fix-3.jpg"},
+    {t:"자동바 손잡이를 잡고 올렸다 내리면 회전축이 돌며 단단히 고정됩니다.",img:"images/jadongba-fix-4.jpg"},
+    {t:"손잡이 동작을 반복해 원하는 팽팽함이 될 때까지 조여 주세요.",img:"images/jadongba-fix-5.jpg"},
+    {t:"스프링 레바를 당긴 상태로 끝까지 내려 다시 고정 락을 걸어주세요.",img:"images/jadongba-fix-6.jpg"}
+  ],
+  release:[
+    {t:"스프링 레바를 당긴 상태로 올려 고정 락을 풀어주세요.",img:"images/jadongba-release-1.jpg"},
+    {t:"스프링 레바를 눌러 180도로 올린 상태로 반대쪽 끈을 잡아 당기면 축이 풀리며 빠져 나옵니다.",img:"images/jadongba-release-2.jpg"},
+    {t:"끈이 완전히 빠지면 해체 완료입니다.",img:"images/jadongba-release-3.jpg"}
+  ],
+  cautions:[
+    "제품의 디자인·색상·포장 등은 별도 고지 없이 임의 변경될 수 있습니다.",
+    "사이즈는 측정 방법과 위치에 따라 조금의 편차가 있을 수 있습니다.",
+    "고정 후에는 반드시 고정 락이 걸렸는지 확인하세요. (스프링 레바를 끝까지 내려 락 걸기)"
+  ],
+  confirmNote:"허용 하중(최대 결박 하중)·벨트 재질은 상세페이지에 표기가 없습니다. 제조사 자료로 확인한 뒤 이 항목에 추가해 주세요.",
+  keywords:"자동바, 라쳇, 라체트, 결박, 결박바, 화물고정, 적재함, 트럭, 짐고정, 인성, 벨트, ratchet strap, 8m, 50mm, 타이다운, 철물박사"
+ }
+];
+var SIT=[
+ {g:"화물 · 운반",items:[
+  {q:"트럭 적재함 짐이 흔들려서 단단히 묶고 싶어요",rec:["자동바"],why:"라쳇 방식이라 손잡이를 올렸다 내리는 것만으로 벨트가 팽팽하게 조여집니다. 규격은 길이 8m·폭 50mm입니다. 양쪽 끈의 고리를 걸고 반대쪽 끈을 회전축에 끼워 조여 줍니다."},
+  {q:"이삿짐·큰 짐을 차에 싣는데 끈이 자꾸 풀려요",rec:["자동바"],why:"스프링 레바를 끝까지 내려 고정 락을 걸면 조인 상태가 유지됩니다. 설치 후 락이 걸렸는지 꼭 확인하도록 안내하십시오."}
+ ]}
+];
+
+/* ------------ 렌더 ------------ */
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+var byName={};PRODUCTS.forEach(function(p){byName[p.name]=p;});
+function get(n){return byName[n];}
+function prodsOf(c){return PRODUCTS.filter(function(p){return p.category===c;});}
+var activeCat=CATS[0].key;
+var catbar=document.getElementById('catbar'),panel=document.getElementById('panel');
+
+function thumb(p){return "<div class='thumb'><img src='"+esc(p.image)+"' alt='"+esc(p.name)+"' loading='lazy' onerror=\"this.parentNode.innerHTML='<span class=ph>"+esc(p.icon||'🔧')+"</span>'\"></div>";}
+
+function buildCatbar(){
+  catbar.innerHTML=CATS.map(function(c,i){return "<button data-cat='"+esc(c.key)+"' aria-current='"+(c.key===activeCat)+"'>"+(i+1)+". "+esc(c.key)+"<span class='n'>"+prodsOf(c.key).length+"</span></button>";}).join("");
+  Array.prototype.forEach.call(catbar.querySelectorAll('button'),function(b){b.onclick=function(){activeCat=b.getAttribute('data-cat');buildCatbar();renderPanel();window.scrollTo({top:0,behavior:'smooth'});};});
+}
+function renderPanel(){
+  var i=CATS.map(function(c){return c.key;}).indexOf(activeCat),c=CATS[i],list=prodsOf(activeCat);
+  var h="<div class='panel-head'><span class='panel-num'>과목 "+(i+1)+"</span><h2 class='panel-title'>"+esc(activeCat)+"</h2></div>";
+  h+="<p class='panel-intro'>"+esc(c.intro)+"</p><div class='count-line'>제품 "+list.length+"개 · 카드를 누르면 상세 학습 카드가 열립니다</div><div class='pgrid'>";
+  list.forEach(function(p){
+    h+="<button class='pcard' data-name='"+esc(p.name)+"'>"+thumb(p)+"<div class='pcard-body'><div class='pcard-name'>"+esc(p.name)+"</div><span class='pcard-spec'>"+esc(p.spec)+"</span><div class='pcard-use'>"+esc(p.summary)+"</div><div class='pcard-go'>학습카드 열기 →</div></div></button>";
+  });
+  h+="</div>";panel.innerHTML=h;
+  Array.prototype.forEach.call(panel.querySelectorAll('.pcard'),function(b){b.onclick=function(){openDetail(get(b.getAttribute('data-name')));};});
+}
+function renderSit(){
+  var h="<p class='sit-intro'>고객이 자주 하는 말입니다. 상황을 고르면 추천 제품과 이유가 나옵니다.</p>";
+  SIT.forEach(function(g){
+    h+="<div class='sit-gt'>"+esc(g.g)+"</div><div class='sit-grid'>";
+    g.items.forEach(function(it){
+      h+="<div class='sit-card'><div class='sit-q'>“"+esc(it.q)+"”</div><div class='sit-ans'><div class='sit-lead'>이 제품을 안내해주세요</div><div class='rec'>"+it.rec.map(function(n){return "<button data-name='"+esc(n)+"'>"+esc(n)+"</button>";}).join(" ")+"</div><div class='why'>"+esc(it.why)+"</div></div></div>";
+    });
+    h+="</div>";
+  });
+  var v=document.getElementById('viewSit');v.innerHTML=h;
+  Array.prototype.forEach.call(v.querySelectorAll('button[data-name]'),function(b){b.onclick=function(){openDetail(get(b.getAttribute('data-name')));};});
+}
+
+/* ------------ 상세 카드 ------------ */
+function figs(list,label){
+  return "<div class='fig-grid'>"+list.map(function(s,i){
+    return "<div class='fig'><div class='img'><img src='"+esc(s.img)+"' alt='"+label+" "+(i+1)+"' loading='lazy' onerror=\"this.parentNode.innerHTML='<span class=no>"+(i+1)+"</span>'\"></div><div class='cap'><b>"+(i+1)+"</b>"+esc(s.t)+"</div></div>";
+  }).join("")+"</div>";
+}
+function buildDetail(p){
+  var h="<img class='d-hero' src='"+esc(p.image)+"' alt='"+esc(p.name)+"' onerror=\"this.style.display='none'\">";
+  h+="<div class='d-cat'>"+esc(p.category)+"</div><div class='d-name'>"+esc(p.full||p.name)+"</div><div class='d-one'>"+esc(p.one)+"</div>";
+  h+="<div class='specs'>"+p.stats.map(function(s){return "<div class='spec'><div class='k'>"+esc(s.k)+"</div><div class='v'>"+esc(s.v)+"</div></div>";}).join("")+"</div>";
+  if(p.uses)h+="<div class='tags'>"+p.uses.split(",").map(function(u){return "<span>"+esc(u.trim())+"</span>";}).join("")+"</div>";
+  if(p.video)h+="<div class='sec'><h3>사용 영상</h3><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(p.video.id)+"?start="+(p.video.start||0)+"&rel=0' title='"+esc(p.name)+" 사용 영상' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"+(p.video.note?"<div class='vnote'>"+esc(p.video.note)+"</div>":"")+"</div>";
+  if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
+  if(p.fix)h+="<div class='sec'><h3>고정 방법 (STEP BY STEP)</h3>"+figs(p.fix,"고정")+"</div>";
+  if(p.release)h+="<div class='sec'><h3>해체 방법</h3>"+figs(p.release,"해체")+"</div>";
+  if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
+  if(p.detailImage)h+="<div class='sec'><h3>상세 이미지</h3><img src='"+esc(p.detailImage)+"' alt='"+esc(p.name)+" 상세' loading='lazy' style='display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)' onerror=\"this.parentNode.style.display='none'\"></div>";
+  if(p.cautions&&p.cautions.length)h+="<div class='sec'><h3>주의사항</h3><ul class='cautions'>"+p.cautions.map(function(c){return "<li>"+esc(c)+"</li>";}).join("")+"</ul>"+(p.confirmNote?"<div class='confirm'><b>확인 필요</b> — "+esc(p.confirmNote)+"</div>":"")+"</div>";
+  return h;
+}
+var overlay=document.getElementById('overlay'),detail=document.getElementById('detail'),detailBody=document.getElementById('detailBody');
+function openDetail(p){if(!p)return;detailBody.innerHTML=buildDetail(p);detail.scrollTop=0;overlay.classList.add('open');document.body.style.overflow='hidden';}
+function closeDetail(){overlay.classList.remove('open');document.body.style.overflow='';detailBody.innerHTML='';}
+document.getElementById('close').onclick=closeDetail;
+overlay.onclick=function(e){if(e.target===overlay)closeDetail();};
+document.addEventListener('keydown',function(e){if(e.key==="Escape"&&overlay.classList.contains('open'))closeDetail();});
+
+/* ------------ 검색 · 탭 ------------ */
+function nrm(s){return String(s||'').toLowerCase().replace(/[\s\-_.,()\/·]/g,'');}
+function hay(p){return nrm([p.name,p.full,p.category,p.spec,p.summary,p.uses,p.keywords].join(' '));}
+function renderSearch(q){
+  var v=document.getElementById('viewSearch'),nq=nrm(q);
+  var list=PRODUCTS.filter(function(p){return nq.split(/\s+/).every(function(t){return hay(p).indexOf(t)>-1;})||hay(p).indexOf(nq)>-1;});
+  var h="<div class='count-line'>'"+esc(q)+"' 검색결과 "+list.length+"개</div>";
+  if(!list.length){h+="<div class='empty'><div class='big'>검색 결과가 없습니다</div><div>다른 제품명이나 용도로 다시 검색해 보세요.</div></div>";v.innerHTML=h;return;}
+  h+="<div class='sr-list'>"+list.map(function(p){return "<button class='sr-item' data-name='"+esc(p.name)+"'><span class='sr-cat'>"+esc(p.category)+"</span><span><span class='sr-name'>"+esc(p.name)+"</span><span class='sr-sub'>"+esc(p.spec)+"</span></span><span class='sr-go'>→</span></button>";}).join("")+"</div>";
+  v.innerHTML=h;
+  Array.prototype.forEach.call(v.querySelectorAll('.sr-item'),function(b){b.onclick=function(){openDetail(get(b.getAttribute('data-name')));};});
+}
+var tabLearn=document.getElementById('tabLearn'),tabSit=document.getElementById('tabSit'),input=document.getElementById('q'),sw=document.getElementById('sw');
+var vL=document.getElementById('viewLearn'),vS=document.getElementById('viewSit'),vR=document.getElementById('viewSearch');
+function show(w){vL.classList.toggle('on',w==='learn');vS.classList.toggle('on',w==='sit');vR.classList.toggle('on',w==='search');if(w!=='search'){tabLearn.setAttribute('aria-selected',w==='learn');tabSit.setAttribute('aria-selected',w==='sit');}}
+tabLearn.onclick=function(){input.value='';sw.classList.remove('on');show('learn');window.scrollTo({top:0,behavior:'smooth'});};
+tabSit.onclick=function(){input.value='';sw.classList.remove('on');show('sit');window.scrollTo({top:0,behavior:'smooth'});};
+input.addEventListener('input',function(e){var q=e.target.value;sw.classList.toggle('on',q.length>0);if(!q.trim()){show(tabSit.getAttribute('aria-selected')==='true'?'sit':'learn');return;}renderSearch(q);show('search');});
+document.getElementById('qx').onclick=function(){input.value='';sw.classList.remove('on');show(tabSit.getAttribute('aria-selected')==='true'?'sit':'learn');};
+var toTop=document.getElementById('toTop');
+window.addEventListener('scroll',function(){toTop.classList.toggle('show',window.scrollY>260);});
+toTop.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+
+buildCatbar();renderPanel();renderSit();
+</script>
+</body>
+</html>
