@@ -495,6 +495,29 @@ var PRODUCTS=[
     "상세페이지의 제품 사진과 대표 사진은 색상·모양이 다를 수 있으니, 고객에게 안내할 때 실제 제품을 꼭 확인하십시오."
   ],
   keywords:"원홀수전, 원홀, 주방수전, 주방용수전, 싱크대수전, 싱크대, 아이녹스, inox, 4WAY, 와이드, 폭포, 직수, 분사, 수전, 철물박사"
+ },{
+  name:"도어클로저", full:"도어클로저 (삼화정밀 K630 · K1600 · K2630 · K630F)", category:"문·잠금장치", icon:"🚪",
+  spec:"K630 · K1600 시리즈 · K2630 · K630F",
+  summary:"문이 열린 뒤 천천히 저절로 닫히게 하는 제품입니다. 모델별 특징과 설치 방법을 영상으로 익힙니다.",
+  one:"문을 열고 지나가면 문이 저절로 닫히게 해 주는 제품입니다. 모델마다 문을 미는 쪽 설치, 정지형, 방화형, 내화 오일형으로 나뉘므로 고객 문에 맞는 모델을 먼저 확인합니다.",
+  uses:"현관문·방화문 도어클로저 설치·교체",
+  image:"img/door-closer.jpg",
+  stats:[{k:"브랜드",v:"삼화정밀 (ASSA ABLOY)"},{k:"모델",v:"K630 · K1600 시리즈 · K2630 · K630F"},{k:"용도",v:"현관문·방화문"}],
+  typesTitle:"모델별 구분", typesNote:"고객 문과 요구 기능에 맞는 모델을 고르기 위한 구분입니다.",
+  types:[
+    {no:"1",name:"K630",traitsLabel:"특징",traits:["문을 미는 쪽에 설치하는 모델(일자브라켓)"]},
+    {no:"2",name:"K1600 시리즈 (K1620, K1630) · 스톱형",traitsLabel:"특징",traits:["문을 90도 이상 열면 닫히지 않고 정지합니다.","현관문에 도어스톱을 달고 싶지 않은 경우에 유용합니다."]},
+    {no:"3",name:"K2630 · 방화형",traitsLabel:"특징",traits:["평소에는 90도에서 정지해 있습니다.","화재 발생 시 열기를 감지하면 자동으로 문을 닫아 불길이 번지는 것을 막아주는 특수한 기능이 있습니다."]},
+    {no:"4",name:"K630F · 내화형 오일",traitsLabel:"특징",traits:["내부의 오일이 새어 나오더라도 화재 시 불이 쉽게 옮겨붙지 않도록 설계된 내화형 오일을 사용합니다."]}
+  ],
+  videosTitle:"설치 · 교체 영상",
+  videos:[
+    {label:"K630 (문을 미는 쪽 설치 · 일자브라켓)",id:"p0A4t4TWxx0",start:18,title:"삼화정밀K630 모델설치방법",by:"ASSA ABLOY삼화정밀"},
+    {label:"K1600 시리즈 (스톱형)",id:"NlFUO-rvSTQ",start:94,title:"현관문 말굽이 필요 없는 정지형 도어클로저 설치하기!!",by:"철물박사 TV"},
+    {label:"도어클로저 종류와 기능 정리",id:"YH99HKvDDs8",start:0,title:"현관문 도어클로저!! 뭔 사야 할지 잘 모르겠나요?? 도어클로저의 종류와 기능을 완벽하게 정리해 드립니다!!",by:"철물박사 TV"},
+    {label:"기름이 새는 도어클로저 교체",id:"jBQLnGmopuc",start:0,title:"기름 줄줄 새는 현관문 도어클로저 통짜로 교체하기!!",by:"철물박사 TV"}
+  ],
+  keywords:"도어클로저, 도어체크, 도어클로져, 현관문, 방화문, 삼화정밀, K630, K1620, K1630, K1600, K2630, K630F, 스톱형, 정지형, 방화형, 내화형, 일자브라켓, 오일, 철물박사"
  }
 ];
 var SIT=[
@@ -550,7 +573,7 @@ function figs(list,label){
 function buildDetail(p){
   var h="<img class='d-hero' src='"+esc(p.image)+"' alt='"+esc(p.name)+"' onerror=\"this.style.display='none'\">";
   h+="<div class='d-cat'>"+esc(p.category)+"</div><div class='d-name'>"+esc(p.full||p.name)+"</div><div class='d-one'>"+esc(p.one)+"</div>";
-  h+="<div class='specs'>"+p.stats.map(function(s){return "<div class='spec'><div class='k'>"+esc(s.k)+"</div><div class='v'>"+esc(s.v)+"</div></div>";}).join("")+"</div>";
+  h+="<div class='specs'>"+(p.stats||[]).map(function(s){return "<div class='spec'><div class='k'>"+esc(s.k)+"</div><div class='v'>"+esc(s.v)+"</div></div>";}).join("")+"</div>";
   if(p.uses)h+="<div class='tags'>"+p.uses.split(",").map(function(u){return "<span>"+esc(u.trim())+"</span>";}).join("")+"</div>";
   if(p.videos)h+="<div class='sec'><h3>"+esc(p.videosTitle||'설치 영상')+"</h3>"+p.videos.map(function(v){return "<div class='refitem'>"+(v.label?"<div class='vlabel'>"+esc(v.label)+"</div>":"")+(v.img?"<img class='vthumb' src='"+esc(v.img)+"' alt='"+esc(v.label||v.title)+"' loading='lazy'>":"")+"<div class='video'><iframe src='https://www.youtube.com/embed/"+esc(v.id)+"?start="+(v.start||0)+"&rel=0' title='"+esc(v.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'>"+esc(v.title)+"<span class='refby'> · "+esc(v.by)+"</span></div></div>";}).join("")+"</div>";
   if(p.video)h+="<div class='sec'><h3>사용 영상</h3><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(p.video.id)+"?start="+(p.video.start||0)+"&rel=0' title='"+esc(p.name)+" 사용 영상' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"+(p.video.note?"<div class='vnote'>"+esc(p.video.note)+"</div>":"")+"</div>";
@@ -558,7 +581,7 @@ function buildDetail(p){
   if(p.release)h+="<div class='sec'><h3>해체 방법</h3>"+figs(p.release,"해체")+"</div>";
   if(p.usage)h+="<div class='sec'><h3>"+esc(p.usageTitle||'사용 방법')+"</h3><div class='steps'>"+p.usage.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(x.t)+"</div></div>";}).join("")+"</div></div>";
   if(p.diagrams)h+="<div class='sec'><h3>설치 도해</h3>"+figs(p.diagrams,'도해')+"</div>";
-  if(p.types)h+="<div class='sec'><h3>손잡이 종류 구분 <span class='refbadge'>참고용</span></h3><p class='refnote'>고객 문(현관문·방화문·사무실 문)에 맞는 종류를 고르기 위한 구분표입니다.</p><div class='typegrid'>"+p.types.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div><div class='typelbl'>구성</div><div class='typetxt'>"+esc(x.parts)+"</div><div class='typelbl'>특징</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul><div class='typelbl'>용도</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul></div>";}).join("")+"</div>"+(p.typesImage?"<img src='"+esc(p.typesImage)+"' alt='현관정 종류 비교표' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";
+  if(p.types)h+="<div class='sec'><h3>"+esc(p.typesTitle||'손잡이 종류 구분')+" <span class='refbadge'>참고용</span></h3><p class='refnote'>"+esc(p.typesNote||'고객 문(현관문·방화문·사무실 문)에 맞는 종류를 고르기 위한 구분표입니다.')+"</p><div class='typegrid'>"+p.types.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div>"+(x.parts?"<div class='typelbl'>구성</div><div class='typetxt'>"+esc(x.parts)+"</div>":"")+"<div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>용도</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div>"+(p.typesImage?"<img src='"+esc(p.typesImage)+"' alt='종류 비교표' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";
   if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
   if(p.detailImage)h+="<div class='sec'><h3>상세 이미지</h3><img src='"+esc(p.detailImage)+"' alt='"+esc(p.name)+" 상세' loading='lazy' style='display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)' onerror=\"this.parentNode.style.display='none'\"></div>";
