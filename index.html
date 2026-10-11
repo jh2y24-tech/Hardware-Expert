@@ -127,6 +127,9 @@ button{font-family:inherit}
 .refby{font-weight:500;color:var(--ink-soft);font-size:12.5px}
 .relcard{border:1.5px dashed var(--brand-2);border-radius:14px;padding:16px;background:var(--brand-tint)}
 .reltitle{font-size:16px;font-weight:900}
+.linkrow{display:flex;flex-wrap:wrap;gap:10px}
+.linkbtn{display:inline-flex;align-items:center;gap:6px;background:var(--dark);color:var(--brand);font-weight:800;font-size:14.5px;text-decoration:none;padding:13px 18px;border-radius:12px}
+.linkbtn:hover{filter:brightness(1.2)}
 .vnote{font-size:12.5px;color:var(--ink-soft);margin-top:8px}
 /* image captions grid */
 .fig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
@@ -134,6 +137,8 @@ button{font-family:inherit}
 .fig .img{aspect-ratio:3/2;background:#fff;display:grid;place-items:center;overflow:hidden}
 .fig .img img{width:100%;height:100%;object-fit:contain}
 .fig .img .no{font-family:var(--mono);font-size:30px;font-weight:900;color:var(--dark)}
+.fig.free .img{aspect-ratio:auto}
+.fig.free .img img{height:auto;object-fit:initial}
 .fig .cap{padding:12px 14px;font-size:13.5px;line-height:1.55;font-weight:600}
 .fig .cap b{display:inline-block;background:var(--dark);color:var(--brand);font-family:var(--mono);font-size:11.5px;padding:1px 8px;border-radius:6px;margin-right:6px}
 /* steps */
@@ -303,6 +308,54 @@ var PRODUCTS=[
     "일반 세면대에 사용하는 제품입니다. 유리볼 타입의 세면대에는 사용할 수 없습니다."
   ],
   keywords:"세면대, 자동팝업, 팝업, 원터치, 배수구, 배수, 세면대 교체, 고무트랩, 맘대로, 트랩, 욕실, 철물박사"
+ },{
+  name:"양변기 (부속·조절대)", full:"양변기부속 / 무소음 / 측면내림 / 버튼겸용", category:"욕실·배관용품", icon:"🚽",
+  spec:"물탱크 안 설치 · 측면내림 · 버튼겸용",
+  summary:"양변기의 물을 내릴 때 사용되는 부속으로 물탱크 안에 설치합니다. 핸들 설치와 볼탑·싸이폰 설치 순서를 도해로 익힙니다.",
+  one:"물탱크 안 부속은 핸들 → 볼탑(급수) → 싸이폰 순서로 설치하고, 설치 후 도해와 같은지, 수위와 줄 길이가 맞는지 확인합니다.",
+  uses:"양변기 물탱크 부속 교체, 양변기 물이 샐 때 부속 교체",
+  image:"img/yangbyeongi.jpg", detailImage:"img/yangbyeongi-detail.jpg",
+  stats:[{k:"제품명",v:"양변기부속/무소음/측면내림/버튼겸용"},{k:"설치 위치",v:"양변기 물탱크 안"},{k:"재질",v:"PVC 외"},{k:"제조국",v:"대한민국"}],
+  video:{id:"xbRl7FV2MtQ",start:0,note:"영상 제목: 양변기 어디선가 물이 샌다!? 수리기사 부르기 전에 셀프 점검 하고 수리비 아끼세요!! (ft.양변기 물탱크 부속 전체 교체하기!!) · 철물박사 TV"},
+  fixTitle:"핸들 설치 방법 (절수형 측면 레버 핸들)",
+  fix:[
+    {t:"핸들 레버를 물탱크의 사각 구멍에 끼운 뒤, 너트를 반시계 방향으로 돌려서 고정합니다. 물마개 줄은 고정부위에 ①에서 ②순서로 끼웁니다.",img:"img/yangbyeongi-handle.jpg"}
+  ],
+  usageTitle:"볼탑·싸이폰 설치 순서 (제조사 시공 방법)",
+  usage:[
+    {t:"급수밸브(앵글밸브)를 먼저 잠그고, 그림④와 같이 볼탑을 순서대로 설치합니다."},
+    {t:"기존 제품의 패킹 및 너트는 맞지 않을 수 있으니, 본 제품을 사용합니다."},
+    {t:"보충수 호스는 그림④의 A같이 정확하게 설치합니다."},
+    {t:"설치가 완료되면 그림④의 B와 같이 부구가 보충수 호스 사이의 방해를 받지 않는지 확인합니다. (부구 작동에 방해를 받으면 지수 및 급수 불량이 발생할 수 있습니다.)"},
+    {t:"싸이폰 설치 시 그림⑤와 같이 설치하며 로크너트는 공구를 사용하여 꼭 조여줍니다."},
+    {t:"급수밸브(앵글밸브)에 플렉시블 호스를 연결하고 통수를 한 뒤, 본 제품에 플렉시블 호스를 연결합니다. (통수를 하지 않으면 이물질이 거름망에 걸려 지수 및 급수에 방해가 되어 불량 발생 요인이 됩니다.)"},
+    {t:"설치가 끝나면 설치 예시도와 같이 설치되었는지 다시 한번 확인합니다. (수위 조절은 그림④의 C와 같이 위아래로 조절하여 사용합니다.)"}
+  ],
+  diagrams:[
+    {t:"설치 예시도 — 물탱크 안 부속의 위치와 이름",img:"img/yangbyeongi-diagram-install.jpg"},
+    {t:"줄길이 조절 예시도 — 짧다(×) · 길다(×) · 적당하다(○)",img:"img/yangbyeongi-diagram-cord.jpg"},
+    {t:"그림④ 볼탑 설치 예시도 (A·B·C)",img:"img/yangbyeongi-diagram-balltop.jpg"},
+    {t:"그림⑤ 싸이폰 설치 예시도",img:"img/yangbyeongi-diagram-siphon.jpg"},
+    {t:"무소음 양변기부속 완성도",img:"img/yangbyeongi-diagram-done.jpg"}
+  ],
+  todoTitle:"양변기조절대",
+  todo:"양변기조절대는 설치 방법 자료(상세페이지·영상)를 받으면 이 칸에 정리하세요. 지금은 아래 홈페이지 링크로 제품을 볼 수 있습니다.",
+  links:[
+    {label:"양변기부속 홈페이지",url:"https://www.metaldiy.com/main/searchItemList.do?kw=%EC%96%91%EB%B3%80%EA%B8%B0%EB%B6%80%EC%86%8D&listSortNo=1#none"},
+    {label:"양변기조절대 홈페이지",url:"https://www.metaldiy.com/main/searchItemList.do?kw=%EC%96%91%EB%B3%80%EA%B8%B0%EC%A1%B0%EC%A0%88%EB%8C%80&listSortNo=1"}
+  ],
+  cautions:[
+    "[시공] 본 제품은 최저 0.03MPa(0.3kgf/㎠) ~ 최고 0.75MPa(7.5kgf/㎠)의 수압에서만 사용 가능합니다.",
+    "[시공] 0.10MPa ~ 0.30MPa 수압에서 사용할 때 최적의 성능을 발휘합니다.",
+    "[시공] 배관 공사 후에는 필밸브 접속관을 연결하기 전에 반드시 앵글밸브를 열어 통수시키고 이물질 등을 완전히 제거한 후 설치합니다.",
+    "[시공] 설치할 때는 설명서대로 정확히 시공하세요. 잘못된 시공으로 생긴 피해는 보상받을 수 없습니다. 제품을 임의로 분해·개조해서 사용하면 보상받을 수 없습니다.",
+    "[시공] 보충수 호수가 부구에 닿지 않도록 설치하고, 오버플로우 관에 반드시 꽂으셔야 합니다.",
+    "[시공] 필밸브의 부구가 도기의 벽 뒤로 향하면 정상 작동하지 않습니다.",
+    "[사용] 변기 세정제는 화학약품이므로 제품에 치명적인 결함을 일으킬 수 있으니 어떤 세정제라도 탱크에 넣지 마십시오.",
+    "[사용] 제품이 화학성분(염산, 표백제, 아세톤) 등에 닿지 않도록 주의해 주십시오.",
+    "[사용] 사용 중 물방울 떨어지는 소리가 들리거나, 시~이하는 소리가 나면 물이 누수되고 있으므로 철저히 점검하십시오. 누수를 장기간 방치하여 발생한 피해는 보상하지 않습니다."
+  ],
+  keywords:"양변기, 양변기부속, 양변기조절대, 조절대, 변기, 변기부속, 물탱크, 물탱크부속, 레버, 핸들, 볼탑, 필밸브, 싸이폰, 급수밸브, 물이 샌다, 물샘, 철물박사"
  }
 ];
 var SIT=[
@@ -352,7 +405,7 @@ function renderSit(){
 /* ------------ 상세 카드 ------------ */
 function figs(list,label){
   return "<div class='fig-grid'>"+list.map(function(s,i){
-    return "<div class='fig'><div class='img'><img src='"+esc(s.img)+"' alt='"+label+" "+(i+1)+"' loading='lazy' onerror=\"this.parentNode.innerHTML='<span class=no>"+(i+1)+"</span>'\"></div><div class='cap'><b>"+(i+1)+"</b>"+esc(s.t)+"</div></div>";
+    return "<div class='fig"+(label==='도해'?" free":"")+"'><div class='img'><img src='"+esc(s.img)+"' alt='"+label+" "+(i+1)+"' loading='lazy' onerror=\"this.parentNode.innerHTML='<span class=no>"+(i+1)+"</span>'\"></div><div class='cap'><b>"+(i+1)+"</b>"+esc(s.t)+"</div></div>";
   }).join("")+"</div>";
 }
 function buildDetail(p){
@@ -361,15 +414,17 @@ function buildDetail(p){
   h+="<div class='specs'>"+p.stats.map(function(s){return "<div class='spec'><div class='k'>"+esc(s.k)+"</div><div class='v'>"+esc(s.v)+"</div></div>";}).join("")+"</div>";
   if(p.uses)h+="<div class='tags'>"+p.uses.split(",").map(function(u){return "<span>"+esc(u.trim())+"</span>";}).join("")+"</div>";
   if(p.video)h+="<div class='sec'><h3>사용 영상</h3><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(p.video.id)+"?start="+(p.video.start||0)+"&rel=0' title='"+esc(p.name)+" 사용 영상' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"+(p.video.note?"<div class='vnote'>"+esc(p.video.note)+"</div>":"")+"</div>";
-  if(p.todo)h+="<div class='sec'><h3>설치 순서 정리</h3><div class='confirm'><b>작성 예정</b> — "+esc(p.todo)+"</div></div>";
   if(p.fix)h+="<div class='sec'><h3>"+esc(p.fixTitle||'고정 방법 (STEP BY STEP)')+"</h3>"+figs(p.fix,"고정")+"</div>";
   if(p.release)h+="<div class='sec'><h3>해체 방법</h3>"+figs(p.release,"해체")+"</div>";
-  if(p.usage)h+="<div class='sec'><h3>사용 방법</h3><div class='steps'>"+p.usage.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(x.t)+"</div></div>";}).join("")+"</div></div>";
+  if(p.usage)h+="<div class='sec'><h3>"+esc(p.usageTitle||'사용 방법')+"</h3><div class='steps'>"+p.usage.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(x.t)+"</div></div>";}).join("")+"</div></div>";
+  if(p.diagrams)h+="<div class='sec'><h3>설치 도해</h3>"+figs(p.diagrams,'도해')+"</div>";
+  if(p.todo)h+="<div class='sec'><h3>"+esc(p.todoTitle||'설치 순서 정리')+"</h3><div class='confirm'><b>작성 예정</b> — "+esc(p.todo)+"</div></div>";
   if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
   if(p.detailImage)h+="<div class='sec'><h3>상세 이미지</h3><img src='"+esc(p.detailImage)+"' alt='"+esc(p.name)+" 상세' loading='lazy' style='display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)' onerror=\"this.parentNode.style.display='none'\"></div>";
   if(p.related)h+="<div class='sec'><h3>함께 쓰는 관련 제품 <span class='refbadge'>참고용</span></h3>"+p.related.map(function(r){return "<div class='relcard'><div class='reltitle'>"+esc(r.name)+"</div><p class='refnote' style='margin:4px 0 12px'>"+esc(r.note)+"</p><div class='fig-grid'>"+(r.imgs||[]).map(function(m){return "<div class='fig'><div class='img'><img src='"+esc(m.src)+"' alt='"+esc(m.cap)+"' loading='lazy'></div><div class='cap'>"+esc(m.cap)+"</div></div>";}).join("")+"</div><div class='steps' style='margin-top:12px'>"+r.install.map(function(t,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(t)+"</div></div>";}).join("")+"</div><div class='vnote'>"+esc(r.spec)+"</div>"+(r.detail?"<img src='"+esc(r.detail)+"' alt='"+esc(r.name)+" 상세' loading='lazy' style='display:block;width:100%;height:auto;margin-top:12px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";}).join("")+"</div>";
   if(p.refs&&p.refs.length)h+="<div class='sec'><h3>이런 제품도 있어요 <span class='refbadge'>참고용</span></h3><p class='refnote'>같은 계열의 다른 제품 영상입니다. 위 자동바(8m×50mm 인성)와 규격·사용법이 다를 수 있으니 참고로만 보세요.</p>"+p.refs.map(function(r){return "<div class='refitem'><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(r.id)+"?rel=0' title='"+esc(r.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'><span class='refbadge'>참고용</span> "+esc(r.title)+"<span class='refby'> · "+esc(r.by)+"</span></div></div>";}).join("")+"</div>";
+  if(p.links)h+="<div class='sec'><h3>제품 홈페이지</h3><div class='linkrow'>"+p.links.map(function(l){return "<a class='linkbtn' href='"+esc(l.url)+"' target='_blank' rel='noopener noreferrer'>"+esc(l.label)+" <span>↗</span></a>";}).join("")+"</div></div>";
   if(p.cautions&&p.cautions.length)h+="<div class='sec'><h3>주의사항</h3><ul class='cautions'>"+p.cautions.map(function(c){return "<li>"+esc(c)+"</li>";}).join("")+"</ul>"+(p.confirmNote?"<div class='confirm'><b>확인 필요</b> — "+esc(p.confirmNote)+"</div>":"")+"</div>";
   return h;
 }
