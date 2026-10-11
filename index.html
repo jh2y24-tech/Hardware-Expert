@@ -49,6 +49,10 @@ button{font-family:inherit}
 .tab[aria-selected="true"] b{color:var(--brand)}
 .tab[aria-selected="true"] span{color:#e6dfc3}
 .wrap{max-width:1180px;margin:0 auto;padding:12px clamp(14px,3.5vw,34px) 90px}
+.purpose{background:var(--dark);color:#fff;border-radius:14px;padding:16px 20px;margin:6px 0 4px}
+.purpose>b{display:block;color:var(--brand);font-size:15px;margin-bottom:4px}
+.purpose p{font-size:13.5px;line-height:1.65;color:#f1ead0}
+.purpose p b{color:var(--brand)}
 .view{display:none}.view.on{display:block}
 /* catbar */
 .catbar{position:sticky;top:0;z-index:20;display:flex;gap:9px;padding:9px 2px 11px;margin-bottom:8px;background:var(--paper);box-shadow:0 7px 8px -7px rgba(0,0,0,.18);overflow-x:auto}
@@ -162,7 +166,7 @@ button{font-family:inherit}
   <div class="hero-inner">
     <div class="kicker">인테리어 · 생활용품 · DIY 각종 정보 총집합!</div>
     <h1>철물박사 <b>TV</b></h1>
-    <div class="badges"><span class="badge">제품 교육 핸드북 · <b>STAFF</b></span><span class="badge">제품별 사용법 · <b>한눈에</b></span></div>
+    <div class="badges"><span class="badge">제품 교육 핸드북 · <b>STAFF</b></span><span class="badge">설치 · 사용법 · <b>직원 교육용</b></span></div>
   </div>
 </header>
 
@@ -173,17 +177,18 @@ button{font-family:inherit}
     <button class="x" id="qx" aria-label="지우기">&times;</button>
   </div>
   <div class="tabs" role="tablist">
-    <button class="tab" id="tabLearn" role="tab" aria-selected="true"><b>과목별 학습</b><span>제품군별로 배우기</span></button>
+    <button class="tab" id="tabLearn" role="tab" aria-selected="true"><b>과목별 학습</b><span>설치·사용법 중심으로 배우기</span></button>
     <button class="tab" id="tabSit" role="tab" aria-selected="false"><b>상황별 응대</b><span>고객 상황 → 맞는 제품</span></button>
   </div>
 </div></div>
 
 <main class="wrap">
+  <aside class="purpose"><b>직원 교육용 자료입니다</b><p>제품이 무엇이고 어떤 기능이 있는지보다, <b>어떻게 설치하고 어떻게 사용하는지</b>를 익히는 데 중점을 둡니다. 직원이 고객에게 직접 설명할 수 있도록 영상과 단계별 사진 순서로 구성했고, 함께 쓰는 관련 제품은 참고용으로 보여줍니다.</p></aside>
   <section class="view on" id="viewLearn"><div class="catbar" id="catbar"></div><div id="panel"></div></section>
   <section class="view" id="viewSit"></section>
   <section class="view" id="viewSearch"></section>
 </main>
-<div class="foot">철물박사 TV · 제품 교육 핸드북 · 제품이 추가되면 목록에 자동으로 반영됩니다.</div>
+<div class="foot">철물박사 TV · 직원 교육용 핸드북 · 설치·사용 방법 중심 · 제품이 추가되면 목록에 자동으로 반영됩니다.</div>
 
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="제품 학습 카드">
   <div class="detail" id="detail"><div class="detail-head"><button class="detail-close" id="close" aria-label="닫기">&times;</button></div><div class="detail-body" id="detailBody"></div></div>
@@ -197,7 +202,8 @@ button{font-family:inherit}
    (이미지가 없으면 번호/아이콘으로 대체되어 깨지지 않습니다)
    =================================================================== */
 var CATS=[
-  {key:"화물·운반용품",icon:"📦",intro:"짐을 싣고 묶고 고정하는 제품군입니다. 제품 설명은 상세페이지와 제조사·판매처 자료에 있는 내용만 담았습니다."}
+  {key:"화물·운반용품",icon:"📦",intro:"짐을 싣고 묶고 고정하는 제품군입니다. 어떤 제품이 있는지보다, 고객 앞에서 어떻게 걸고 조이고 푸는지를 설명할 수 있게 정리했습니다."},
+  {key:"욕실·배관용품",icon:"🚰",intro:"욕실 배수·배관 제품군입니다. 설치와 사용 순서를 영상으로 보고, 고객에게 그대로 설명할 수 있게 익히는 것이 목표입니다."}
 ];
 var PRODUCTS=[
  {
@@ -247,6 +253,19 @@ var PRODUCTS=[
   confirmNote:"허용 하중(최대 결박 하중)·벨트 재질은 상세페이지에 표기가 없습니다. 제조사 자료로 확인한 뒤 이 항목에 추가해 주세요.",
   keywords:"자동바, 라쳇, 라체트, 결박, 결박바, 화물고정, 적재함, 트럭, 짐고정, 인성, 벨트, ratchet strap, 8m, 50mm, 타이다운, 철물박사"
  }
+
+ ,{
+  name:"세면대 자동팝업", full:"세면대 자동팝업", category:"욕실·배관용품", icon:"🚰",
+  spec:"세면대 배수구 · 설치 영상",
+  summary:"세면대 아래 배수 부위를 설치·수리하는 방법을 영상으로 익히는 제품입니다. (철물박사 TV 영상 기준)",
+  one:"세면대 물 새는 부위 수리와 배수구 악취 차단 방법을 영상으로 보며 설치 순서를 익힙니다.",
+  uses:"세면대 설치, 세면대 배수구 수리, 배수구 악취 차단",
+  image:"img/semyeondae-autopopup.jpg",
+  stats:[{k:"제품",v:"세면대 자동팝업"},{k:"설명 영상",v:"철물박사 TV"}],
+  video:{id:"_o6c9i2l4ac",start:0,note:"영상 제목: 세면대 아래에서 물이 샌다구요? 똥손도 10분이면 할 수 있는 물 새는 세면대 수리하기!! (ft.세면대 배수구 악취 차단방법) · 철물박사 TV"},
+  todo:"영상을 보고 단계별 설치 순서와 사진을 정리해 이 칸에 채워 넣어야 합니다. 현재는 영상만 연결되어 있고, 규격·구성품·주의사항은 제조사 자료로 확인한 뒤 추가하세요.",
+  keywords:"세면대, 자동팝업, 팝업, 배수구, 배수, 세면대 물샘, 악취, 하수구, 욕실, 철물박사"
+ }
 ];
 var SIT=[
  {g:"화물 · 운반",items:[
@@ -272,7 +291,7 @@ function buildCatbar(){
 function renderPanel(){
   var i=CATS.map(function(c){return c.key;}).indexOf(activeCat),c=CATS[i],list=prodsOf(activeCat);
   var h="<div class='panel-head'><span class='panel-num'>과목 "+(i+1)+"</span><h2 class='panel-title'>"+esc(activeCat)+"</h2></div>";
-  h+="<p class='panel-intro'>"+esc(c.intro)+"</p><div class='count-line'>제품 "+list.length+"개 · 카드를 누르면 상세 학습 카드가 열립니다</div><div class='pgrid'>";
+  h+="<p class='panel-intro'>"+esc(c.intro)+"</p><div class='count-line'>제품 "+list.length+"개 · 카드를 누르면 설치·사용 학습 카드가 열립니다</div><div class='pgrid'>";
   list.forEach(function(p){
     h+="<button class='pcard' data-name='"+esc(p.name)+"'>"+thumb(p)+"<div class='pcard-body'><div class='pcard-name'>"+esc(p.name)+"</div><span class='pcard-spec'>"+esc(p.spec)+"</span><div class='pcard-use'>"+esc(p.summary)+"</div><div class='pcard-go'>학습카드 열기 →</div></div></button>";
   });
@@ -304,12 +323,13 @@ function buildDetail(p){
   h+="<div class='specs'>"+p.stats.map(function(s){return "<div class='spec'><div class='k'>"+esc(s.k)+"</div><div class='v'>"+esc(s.v)+"</div></div>";}).join("")+"</div>";
   if(p.uses)h+="<div class='tags'>"+p.uses.split(",").map(function(u){return "<span>"+esc(u.trim())+"</span>";}).join("")+"</div>";
   if(p.video)h+="<div class='sec'><h3>사용 영상</h3><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(p.video.id)+"?start="+(p.video.start||0)+"&rel=0' title='"+esc(p.name)+" 사용 영상' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"+(p.video.note?"<div class='vnote'>"+esc(p.video.note)+"</div>":"")+"</div>";
-  if(p.refs&&p.refs.length)h+="<div class='sec'><h3>이런 제품도 있어요 <span class='refbadge'>참고용</span></h3><p class='refnote'>같은 계열의 다른 제품 영상입니다. 위 자동바(8m×50mm 인성)와 규격·사용법이 다를 수 있으니 참고로만 보세요.</p>"+p.refs.map(function(r){return "<div class='refitem'><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(r.id)+"?rel=0' title='"+esc(r.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'><span class='refbadge'>참고용</span> "+esc(r.title)+"<span class='refby'> · "+esc(r.by)+"</span></div></div>";}).join("")+"</div>";
-  if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
+  if(p.todo)h+="<div class='sec'><h3>설치 순서 정리</h3><div class='confirm'><b>작성 예정</b> — "+esc(p.todo)+"</div></div>";
   if(p.fix)h+="<div class='sec'><h3>고정 방법 (STEP BY STEP)</h3>"+figs(p.fix,"고정")+"</div>";
   if(p.release)h+="<div class='sec'><h3>해체 방법</h3>"+figs(p.release,"해체")+"</div>";
+  if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
   if(p.detailImage)h+="<div class='sec'><h3>상세 이미지</h3><img src='"+esc(p.detailImage)+"' alt='"+esc(p.name)+" 상세' loading='lazy' style='display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)' onerror=\"this.parentNode.style.display='none'\"></div>";
+  if(p.refs&&p.refs.length)h+="<div class='sec'><h3>이런 제품도 있어요 <span class='refbadge'>참고용</span></h3><p class='refnote'>같은 계열의 다른 제품 영상입니다. 위 자동바(8m×50mm 인성)와 규격·사용법이 다를 수 있으니 참고로만 보세요.</p>"+p.refs.map(function(r){return "<div class='refitem'><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(r.id)+"?rel=0' title='"+esc(r.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'><span class='refbadge'>참고용</span> "+esc(r.title)+"<span class='refby'> · "+esc(r.by)+"</span></div></div>";}).join("")+"</div>";
   if(p.cautions&&p.cautions.length)h+="<div class='sec'><h3>주의사항</h3><ul class='cautions'>"+p.cautions.map(function(c){return "<li>"+esc(c)+"</li>";}).join("")+"</ul>"+(p.confirmNote?"<div class='confirm'><b>확인 필요</b> — "+esc(p.confirmNote)+"</div>":"")+"</div>";
   return h;
 }
