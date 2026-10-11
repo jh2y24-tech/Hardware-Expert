@@ -348,8 +348,6 @@ var PRODUCTS=[
     {t:"그림⑤ 싸이폰 설치 예시도",img:"img/yangbyeongi-diagram-siphon.jpg"},
     {t:"무소음 양변기부속 완성도",img:"img/yangbyeongi-diagram-done.jpg"}
   ],
-  todoTitle:"양변기조절대",
-  todo:"양변기조절대는 설치 방법 자료(상세페이지·영상)를 받으면 이 칸에 정리하세요. 지금은 아래 홈페이지 링크로 제품을 볼 수 있습니다.",
   links:[
     {label:"양변기부속 홈페이지",url:"https://www.metaldiy.com/main/searchItemList.do?kw=%EC%96%91%EB%B3%80%EA%B8%B0%EB%B6%80%EC%86%8D&listSortNo=1#none"},
     {label:"양변기조절대 홈페이지",url:"https://www.metaldiy.com/main/searchItemList.do?kw=%EC%96%91%EB%B3%80%EA%B8%B0%EC%A1%B0%EC%A0%88%EB%8C%80&listSortNo=1"}
@@ -375,8 +373,6 @@ var PRODUCTS=[
   image:"img/hyeongwan.jpg", detailImage:"img/hyeongwan-detail.jpg",
   stats:[{k:"제품명",v:"레바-9000체어맨/현관용"},{k:"재질",v:"알루미늄"},{k:"색상",v:"그레이, 골드"},{k:"용도",v:"레바형의 현관문 손잡이"}],
   video:{id:"12wD9zHLuP4",start:0,note:"영상 제목: 처음 해보는 사람도 5분이면 가능하다!! 현관문 손잡이 셀프 교체하기!! · 철물박사 TV"},
-  todoTitle:"설치 순서 정리",
-  todo:"영상을 보고 단계별 교체 순서와 사진을 정리해 이 칸에 채워 넣어야 합니다. 현재는 영상만 연결되어 있습니다.",
   types:[
     {no:"1",name:"[일반] 현관정 손잡이",parts:"손잡이, 키, 레치",traits:["밖에서는 열쇠로 잠금/해제","안에서는 잠금레바로 잠금/해제"],uses:["아파트, 주택 세대 현관문, 방화문"]},
     {no:"2",name:"[호텔락] 현관정 손잡이",parts:"손잡이, 키, 레치",traits:["문닫으면 자동으로 잠김(오토락)","외부는 항상 잠겨있고 열쇠 있어야 열림"],uses:["원룸, 고시원, 사무실","보안 강화형으로 외부인 통제가 필요한 곳"]},
@@ -391,6 +387,16 @@ var PRODUCTS=[
   ],
   dimsNote:"상세페이지의 치수 도면 기준입니다. 나머지 치수는 아래 '상세 이미지'의 도면에서 확인하세요.",
   keywords:"현관문손잡이, 현관문 손잡이, 현관정, 손잡이, 레바, 레버, 체어맨, 레바9000, 도어락, 문손잡이, 방화문, 호텔락, 통로형, 공정, 레치, 철물박사"
+ },{
+  name:"욕실 샤워기 수전 (벽붙이)", full:"욕실 샤워기 수전 (벽붙이)", category:"욕실·배관용품", icon:"🚿",
+  spec:"벽붙이 · 샤워기 수전",
+  summary:"벽에 붙여 설치하는 욕실 샤워기 수전입니다. 교체 방법을 영상으로 익힙니다.",
+  one:"욕실 샤워기 수전(벽붙이) 교체는 영상에서 보여주는 주의점을 지키면 초보자도 할 수 있습니다.",
+  uses:"욕실 샤워기 수전 교체, 벽붙이 수전 설치",
+  image:"img/shower-faucet.jpg",
+  stats:[{k:"제품",v:"욕실 샤워기 수전"},{k:"설치 형태",v:"벽붙이"},{k:"설명 영상",v:"철물박사 TV"}],
+  video:{id:"opE6_xPdlB4",start:0,note:"영상 제목: 욕실 샤워기 수전 교체!! '이것'만 주의 하면 초보자도 쉽게 할 수 있습니다!! · 철물박사 TV"},
+  keywords:"욕실, 샤워기, 샤워수전, 샤워기수전, 수전, 벽붙이, 벽붙이수전, 욕조수전, 수전교체, 샤워기교체, 철물박사"
  }
 ];
 var SIT=[
@@ -453,7 +459,6 @@ function buildDetail(p){
   if(p.release)h+="<div class='sec'><h3>해체 방법</h3>"+figs(p.release,"해체")+"</div>";
   if(p.usage)h+="<div class='sec'><h3>"+esc(p.usageTitle||'사용 방법')+"</h3><div class='steps'>"+p.usage.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(x.t)+"</div></div>";}).join("")+"</div></div>";
   if(p.diagrams)h+="<div class='sec'><h3>설치 도해</h3>"+figs(p.diagrams,'도해')+"</div>";
-  if(p.todo)h+="<div class='sec'><h3>"+esc(p.todoTitle||'설치 순서 정리')+"</h3><div class='confirm'><b>작성 예정</b> — "+esc(p.todo)+"</div></div>";
   if(p.types)h+="<div class='sec'><h3>손잡이 종류 구분 <span class='refbadge'>참고용</span></h3><p class='refnote'>고객 문(현관문·방화문·사무실 문)에 맞는 종류를 고르기 위한 구분표입니다.</p><div class='typegrid'>"+p.types.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div><div class='typelbl'>구성</div><div class='typetxt'>"+esc(x.parts)+"</div><div class='typelbl'>특징</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul><div class='typelbl'>용도</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul></div>";}).join("")+"</div>"+(p.typesImage?"<img src='"+esc(p.typesImage)+"' alt='현관정 종류 비교표' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";
   if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
