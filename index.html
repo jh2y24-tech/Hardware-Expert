@@ -116,6 +116,11 @@ button{font-family:inherit}
 .desc-p{font-size:15px;color:#3a362b;line-height:1.7}
 .video{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.refbadge{display:inline-block;font-size:11px;font-weight:800;color:#7A4106;background:#FBEBD3;border:1px solid #F0CE9B;border-radius:6px;padding:2px 8px;vertical-align:middle}
+.refnote{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin:-4px 0 14px}
+.refitem{margin-bottom:18px}
+.reftitle{font-size:14px;font-weight:700;line-height:1.5;margin-top:9px}
+.refby{font-weight:500;color:var(--ink-soft);font-size:12.5px}
 .vnote{font-size:12.5px;color:var(--ink-soft);margin-top:8px}
 /* image captions grid */
 .fig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
@@ -217,6 +222,10 @@ var PRODUCTS=[
   ],
   dimsNote:"각 숫자가 어느 부위의 치수인지는 아래 '상세 이미지'의 치수 도해에서 확인하세요. 사이즈는 측정 방법과 위치에 따라 조금의 편차가 있을 수 있습니다.",
   video:{id:"yLvqPGw6rx4",start:62,note:"영상은 사용 장면이 나오는 1분 2초 지점부터 재생됩니다."},
+  refs:[
+    {id:"vqCnECTllvw",title:"말도안되게 쉽고 깔끔한 초간편 자동스트랩 등장!? (Ep.297)",by:"공구왕황부장"},
+    {id:"mZ4isAAQrT8",title:"오토매틱 스트럭(자동바) 25mm 제품 사용방법 추가 설명",by:"공구왕황부장자료실"}
+  ],
   fix:[
     {t:"양쪽 끈 고리를 걸고 반대쪽 끈을 자동바 회전축에 끼워주세요.",img:"img/jadongba-fix-1.jpg"},
     {t:"넣은 끈을 다시 위쪽 방향으로 올려 뺀 뒤 2개의 끈을 포개 줍니다. 나온 끈은 최대한 팽팽하게 당겨주세요.",img:"img/jadongba-fix-2.jpg"},
@@ -295,6 +304,7 @@ function buildDetail(p){
   h+="<div class='specs'>"+p.stats.map(function(s){return "<div class='spec'><div class='k'>"+esc(s.k)+"</div><div class='v'>"+esc(s.v)+"</div></div>";}).join("")+"</div>";
   if(p.uses)h+="<div class='tags'>"+p.uses.split(",").map(function(u){return "<span>"+esc(u.trim())+"</span>";}).join("")+"</div>";
   if(p.video)h+="<div class='sec'><h3>사용 영상</h3><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(p.video.id)+"?start="+(p.video.start||0)+"&rel=0' title='"+esc(p.name)+" 사용 영상' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"+(p.video.note?"<div class='vnote'>"+esc(p.video.note)+"</div>":"")+"</div>";
+  if(p.refs&&p.refs.length)h+="<div class='sec'><h3>이런 제품도 있어요 <span class='refbadge'>참고용</span></h3><p class='refnote'>같은 계열의 다른 제품 영상입니다. 위 자동바(8m×50mm 인성)와 규격·사용법이 다를 수 있으니 참고로만 보세요.</p>"+p.refs.map(function(r){return "<div class='refitem'><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(r.id)+"?rel=0' title='"+esc(r.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'><span class='refbadge'>참고용</span> "+esc(r.title)+"<span class='refby'> · "+esc(r.by)+"</span></div></div>";}).join("")+"</div>";
   if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.fix)h+="<div class='sec'><h3>고정 방법 (STEP BY STEP)</h3>"+figs(p.fix,"고정")+"</div>";
   if(p.release)h+="<div class='sec'><h3>해체 방법</h3>"+figs(p.release,"해체")+"</div>";
