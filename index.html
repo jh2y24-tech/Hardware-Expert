@@ -119,6 +119,7 @@ button{font-family:inherit}
 .sec h3::before{content:"";width:5px;height:17px;background:var(--brand);border:1px solid var(--dark);border-radius:2px}
 .desc-p{font-size:15px;color:#3a362b;line-height:1.7}
 .video{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000}
+.video.vert{padding-bottom:0;aspect-ratio:9/16;max-width:360px;margin:0 auto}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .refbadge{display:inline-block;font-size:11px;font-weight:800;color:#7A4106;background:#FBEBD3;border:1px solid #F0CE9B;border-radius:6px;padding:2px 8px;vertical-align:middle}
 .refnote{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin:-4px 0 14px}
@@ -855,6 +856,45 @@ var PRODUCTS=[
   confirmNote:"시공 순서는 상세페이지에 표기가 없습니다. 영상과 제조사 설명서로 확인해 추가해 주세요.",
   keywords:"토우앙카, 자천공앙카, 자천공, 마이토우, mytow, TS, TA, TS35, TS55, TS56, TA30, TA50, TA70, 스피드앙카, 석고앙카, 석고보드앙카, 앙카, 진동, 석고보드, 액자, 시계, 커튼, 거울, 행거, 벽걸이에어컨, 블라인드, 철물박사"
  },{
+  name:"세트앙카 설치 방법 (콘크리트 고정)", full:"세트앙카 설치 방법 · 규격 고르기 (콘크리트 고정)", category:"앙카·고정용품", icon:"🔩",
+  spec:"M6~M22 · 드릴 구멍 → 앙카 삽입 · 설치 영상",
+  summary:"콘크리트에 구멍을 뚫고 세트앙카를 박아 고정하는 방법을 영상으로 익히고, 규격표로 볼트 규격에 맞는 드릴비트와 뚫는 깊이를 고릅니다.",
+  one:"세트앙카는 규격(M6~M22)에 따라 드릴비트 굵기와 뚫는 깊이가 정해져 있습니다. 고객이 쓰려는 볼트 규격을 먼저 확인한 뒤 규격표로 맞는 드릴비트와 깊이를 안내합니다.",
+  uses:"콘크리트 구조물 고정, 철물 · 브라켓 고정, 목조주택 자재 고정",
+  image:"img/setanka.jpg", detailImage:"img/setanka-detail.jpg",
+  stats:[{k:"규격 범위",v:"M6 ~ M22 (1/4 ~ 7/8인치)"},{k:"예시 제품",v:"철볼트 FPB44용 앵커 (목조주택자재)"},{k:"예시 제품 볼트 지름",v:"9mm"},{k:"예시 제품 외경 · 길이",v:"14mm · 68mm"}],
+  video:{id:"YzA55M-XrNA",start:0,vertical:true,note:"세로형 쇼츠 영상입니다."},
+  typesTitle:"규격표 (규격별 드릴비트 · 뚫는 깊이)", typesNote:"아래 이미지의 규격표를 옮겨 적었습니다. 표에는 앙카 기본 사이즈가 적혀 있고, 앙카 길이는 종류별로 있습니다. 허용 인발하중은 제조사마다 다를 수 있다고 표에 적혀 있으니 꼭 확인하고 안내하세요.",
+  types:[
+    {no:"1",name:"M6 (1/4인치 · 6.36mm · 니부)",traitsLabel:"규격표 기준",traits:["드릴비트 두께 10mm","뚫는 깊이 33mm","앙카 외경 10mm","너트 외경(복스알) 11mm","사용 하중(전단내력) 900 kgf"]},
+    {no:"2",name:"M8 (5/16인치 · 7.93mm · 니부고리)",traitsLabel:"규격표 기준",traits:["드릴비트 두께 12mm","뚫는 깊이 38mm","앙카 외경 12mm","너트 외경(복스알) 13mm","사용 하중(전단내력) 1,200 kgf"]},
+    {no:"3",name:"M10 (3/8인치 · 9.53mm · 삼부)",traitsLabel:"규격표 기준",traits:["드릴비트 두께 14mm","뚫는 깊이 44mm","앙카 외경 14mm","너트 외경(복스알) 14mm","사용 하중(전단내력) 2,100 kgf"]},
+    {no:"4",name:"M12 (1/2인치 · 12.7mm · 욘부)",traitsLabel:"규격표 기준",traits:["드릴비트 두께 17mm","뚫는 깊이 55mm","앙카 외경 17mm","너트 외경(복스알) 19mm","사용 하중(전단내력) 3,400 kgf"]},
+    {no:"5",name:"M16 (5/8인치 · 15.87mm · 고부)",traitsLabel:"규격표 기준",traits:["드릴비트 두께 22mm","뚫는 깊이 65mm","앙카 외경 21mm","너트 외경(복스알) 24mm","사용 하중(전단내력) 5,300 kgf"]},
+    {no:"6",name:"M20 (3/4인치 · 19.5mm · 로꾸부)",traitsLabel:"규격표 기준",traits:["드릴비트 두께 25mm","뚫는 깊이 85mm","앙카 외경 25mm","너트 외경(복스알) 27mm","사용 하중(전단내력) 7,500 kgf"]},
+    {no:"7",name:"M22 (7/8인치 · 22.22mm · 나나부)",traitsLabel:"규격표 기준",traits:["드릴비트 두께 29mm","뚫는 깊이 110mm","앙카 외경 28mm","너트 외경(복스알) 32mm","사용 하중(전단내력) 10,000 kgf"]}
+  ],
+  typesImage:"img/setanka-table.png",
+  parts:[
+    {name:"앙카 외경",desc:"앙카 파이프(슬리브)의 바깥 지름입니다. 드릴 구멍 지름을 고를 때 기준이 됩니다. (규격표 도해 표기)"},
+    {name:"앙카 길이",desc:"앙카 전체 길이입니다. 같은 규격이라도 길이는 종류별로 있습니다. (규격표 도해 표기)"},
+    {name:"파이프(슬리브)",desc:"볼트를 감싸는 몸체 부분입니다. (규격표 도해 표기)"},
+    {name:"앙카 규격",desc:"볼트 굵기를 말합니다. M6, M8, M10 같은 표기입니다. (규격표 도해 표기)"}
+  ],
+  dims:[
+    {k:"볼트 지름 (예시 제품)",v:"9mm"},
+    {k:"전체 길이 (예시 제품)",v:"68mm"},
+    {k:"외경 (예시 제품)",v:"14mm"}
+  ],
+  dimsNote:"상세페이지 사이즈 도면의 예시 제품(철볼트 FPB44용 앵커) 기준입니다. 규격은 상세페이지에 '상단이미지 참조'로만 적혀 있습니다.",
+  cautions:[
+    "앙카 길이는 종류별로 있고, 규격표에는 기본 사이즈가 적혀 있습니다.",
+    "허용 인발하중은 제조사마다 다를 수 있으니 꼭 확인하고 사용해야 합니다. 콘크리트 강도에 따라서도 달라집니다.",
+    "사용 하중은 KN이 아니라 kgf 단위로 바꿔 적은 값입니다."
+  ],
+  confirmNote:"설치 순서(구멍 청소, 앙카 삽입, 조임 방법)는 영상으로 확인해 이 항목에 단계별로 추가해 주세요. 규격표의 출처(제조사)와 예시 제품의 정확한 규격도 확인이 필요합니다.",
+  keywords:"세트앙카, 세트 앙카, 앙카, 콘크리트앙카, 철볼트, FPB44, 목조주택, M6, M8, M10, M12, M16, M20, M22, 니부, 삼부, 욘부, 고부, 로꾸부, 나나부, 드릴비트, 천공, 콘크리트, 인발하중, 전단내력, 철물박사"
+ },{
   name:"웨지앙카", full:"웨지앙카/옵션선택", category:"앙카·고정용품", icon:"🔩",
   spec:"10×75 · 10×100 · 12×120",
   summary:"너트와 와셔가 달린 볼트형 앙카입니다. 옵션은 10×75, 10×100, 12×120 세 가지이며 옵션마다 크기가 다릅니다.",
@@ -1032,6 +1072,7 @@ var SIT=[
  {g:"앙카 · 고정용품",items:[
   {q:"석고보드 벽에 조명기구나 분전반, 전선관을 고정하고 싶어요",rec:["석콕이지앙카 (10개입)"],why:"망치로 박고 피스로 구조물을 고정하는 석고보드용 앙카이며, 상세페이지에 브라켓·분전반·조명기구·전선관 용도가 안내되어 있습니다. 모재 두께가 12mm 이하인 경우에만 쓸 수 있다고 꼭 알려주세요."},
   {q:"석고보드 벽에 거울이나 벽걸이 에어컨처럼 진동이 있고 무거운 물건을 달고 싶어요",rec:["토우앙카 (TS · TA)"],why:"TA 시리즈는 진동흡수력이 뛰어나다고 안내되어 있고 용도에 거울, 행거, 벽걸이 에어컨이 포함됩니다. 석고보드 두께에 맞춰 TA30(5~10mm), TA50(10~15mm), TA70(15~50mm) 중에서 골라주세요."},
+  {q:"콘크리트에 구조물을 고정하려는데 앙카 규격과 드릴 구멍을 어떻게 골라요?",rec:["세트앙카 설치 방법 (콘크리트 고정)"],why:"규격표에 볼트 규격별 드릴비트 두께와 뚫는 깊이가 정리되어 있습니다. 예를 들어 M10은 드릴비트 14mm·뚫는 깊이 44mm입니다. 허용 하중은 제조사마다 다르니 확인 후 안내해 주세요. 설치 영상도 함께 보여드리세요."},
   {q:"웨지앙카나 세트앙카를 박으려는데 드릴 구멍을 몇 mm로 뚫어야 하나요",rec:["웨지앙카"],why:"담당자 안내 기준으로 웨지앙카는 10mm, 세트앙카는 14mm로 천공합니다. 웨지앙카 옵션은 10×75, 10×100, 12×120이고, 12×120 옵션의 천공 지름은 확인 후 안내해 주세요."},
   {q:"석고보드 벽에 액자나 시계, 커튼을 달고 싶어요",rec:["토우앙카 (TS · TA)"],why:"상세페이지에 TS 시리즈의 용도로 액자, 시계, 욕실악세사리, 벽면장식물, 커튼, 장식선반이 안내되어 있습니다. TS35는 최대 하중 70kg, TS55·56은 320kg입니다."}
  ]},
@@ -1098,7 +1139,7 @@ function buildDetail(p){
   h+="<div class='specs'>"+(p.stats||[]).map(function(s){return "<div class='spec'><div class='k'>"+esc(s.k)+"</div><div class='v'>"+esc(s.v)+"</div></div>";}).join("")+"</div>";
   if(p.uses)h+="<div class='tags'>"+p.uses.split(",").map(function(u){return "<span>"+esc(u.trim())+"</span>";}).join("")+"</div>";
   if(p.videos)h+="<div class='sec'><h3>"+esc(p.videosTitle||'설치 영상')+"</h3>"+p.videos.map(function(v){return "<div class='refitem'>"+(v.label?"<div class='vlabel'>"+esc(v.label)+"</div>":"")+(v.img?"<img class='vthumb' src='"+esc(v.img)+"' alt='"+esc(v.label||v.title)+"' loading='lazy'>":"")+"<div class='video'><iframe src='https://www.youtube.com/embed/"+esc(v.id)+"?start="+(v.start||0)+"&rel=0' title='"+esc(v.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'>"+esc(v.title)+(v.by?"<span class='refby'> · "+esc(v.by)+"</span>":"")+"</div></div>";}).join("")+"</div>";
-  if(p.video)h+="<div class='sec'><h3>사용 영상</h3><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(p.video.id)+"?start="+(p.video.start||0)+"&rel=0' title='"+esc(p.name)+" 사용 영상' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"+(p.video.note?"<div class='vnote'>"+esc(p.video.note)+"</div>":"")+"</div>";
+  if(p.video)h+="<div class='sec'><h3>사용 영상</h3><div class='video"+(p.video.vertical?" vert":"")+"'><iframe src='https://www.youtube.com/embed/"+esc(p.video.id)+"?start="+(p.video.start||0)+"&rel=0' title='"+esc(p.name)+" 사용 영상' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"+(p.video.note?"<div class='vnote'>"+esc(p.video.note)+"</div>":"")+"</div>";
   if(p.fix)h+="<div class='sec'><h3>"+esc(p.fixTitle||'고정 방법 (STEP BY STEP)')+"</h3>"+figs(p.fix,"고정")+"</div>";
   if(p.release)h+="<div class='sec'><h3>해체 방법</h3>"+figs(p.release,"해체")+"</div>";
   if(p.usage)h+="<div class='sec'><h3>"+esc(p.usageTitle||'사용 방법')+"</h3><div class='steps'>"+p.usage.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(x.t)+"</div></div>";}).join("")+"</div></div>";
