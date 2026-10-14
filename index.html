@@ -514,6 +514,27 @@ var PRODUCTS=[
     {no:"3",name:"K2630 · 방화형",traitsLabel:"특징",traits:["평소에는 90도에서 정지해 있습니다.","화재 발생 시 열기를 감지하면 자동으로 문을 닫아 불길이 번지는 것을 막아주는 특수한 기능이 있습니다."]},
     {no:"4",name:"K630F · 내화형 오일",traitsLabel:"특징",traits:["내부의 오일이 새어 나오더라도 화재 시 불이 쉽게 옮겨붙지 않도록 설계된 내화형 오일을 사용합니다."]}
   ],
+  usageTitle:"브라켓 고르는 순서 (고객에게 이렇게 물어보세요)",
+  usage:[
+    {t:"먼저 물어봅니다. \"이 문은 밀어서 여는 문인가요, 당겨서 여는 문인가요?\""},
+    {t:"당겨서 여는 문이면 ㄷ자 브라켓입니다. 문의 바깥, 당기는 쪽에 설치합니다."},
+    {t:"밀어서 여는 문이면 일자 브라켓 또는 ㄱ자 브라켓입니다. 문의 안쪽, 미는 쪽에 설치하며 방화문·철문용입니다."},
+    {t:"밀어서 여는 문 중에서 문턱이 없는 곳이면 ㄱ자 브라켓을 고릅니다."}
+  ],
+  groups:[{
+    title:"브라켓 종류 (설치 위치 구분)",
+    note:"브라켓은 도어클로저를 문에 붙이는 받침입니다. 문이 밀어서 열리는지, 당겨서 열리는지에 따라 종류와 설치하는 쪽이 달라집니다.",
+    items:[
+      {no:"1",name:"일자 브라켓",traitsLabel:"설치 위치",traits:["문의 안쪽, 문을 미는 쪽에 설치합니다."],usesLabel:"어떤 문에?",uses:["방화문 · 철문용","밀어서 여는 문에 설치"]},
+      {no:"2",name:"ㄱ자 브라켓",traitsLabel:"설치 위치",traits:["문의 안쪽, 문을 미는 쪽에 설치합니다."],usesLabel:"어떤 문에?",uses:["방화문 · 철문용","문턱이 없는 곳"]},
+      {no:"3",name:"ㄷ자 브라켓",traitsLabel:"설치 위치",traits:["문의 바깥쪽, 문을 당기는 쪽에 설치합니다."],usesLabel:"어떤 문에?",uses:["당겨서 여는 문에 설치"]}
+    ]
+  }],
+  cautions:[
+    "브라켓은 고객 문이 밀어서 여는 문인지, 당겨서 여는 문인지 먼저 확인한 뒤 고르세요.",
+    "일자·ㄱ자는 문 안쪽(미는 쪽), ㄷ자는 문 바깥쪽(당기는 쪽)에 설치합니다."
+  ],
+  confirmNote:"일자와 ㄱ자를 나누는 '문턱이 없는 곳'이 정확히 어떤 상태(문틀 위 턱 등)인지, ㄷ자가 쓰이는 문 재질, 모델별(K630 · K1600 등)로 쓸 수 있는 브라켓은 제조사 자료로 확인해 이 항목에 보완해 주세요.",
   videosTitle:"설치 · 교체 영상",
   videos:[
     {label:"K630 (문을 미는 쪽 설치 · 일자브라켓)",id:"p0A4t4TWxx0",start:18,title:"삼화정밀K630 모델설치방법",by:"ASSA ABLOY삼화정밀"},
@@ -521,7 +542,7 @@ var PRODUCTS=[
     {label:"도어클로저 종류와 기능 정리",id:"YH99HKvDDs8",start:0,title:"현관문 도어클로저!! 뭔 사야 할지 잘 모르겠나요?? 도어클로저의 종류와 기능을 완벽하게 정리해 드립니다!!",by:"철물박사 TV"},
     {label:"기름이 새는 도어클로저 교체",id:"jBQLnGmopuc",start:0,title:"기름 줄줄 새는 현관문 도어클로저 통짜로 교체하기!!",by:"철물박사 TV"}
   ],
-  keywords:"도어클로저, 도어체크, 도어클로져, 현관문, 방화문, 삼화정밀, K630, K1620, K1630, K1600, K2630, K630F, 스톱형, 정지형, 방화형, 내화형, 일자브라켓, 오일, 철물박사"
+  keywords:"도어클로저, 브라켓, 일자브라켓, ㄱ자브라켓, ㄷ자브라켓, 당기는문, 미는문, 밀어서여는문, 철문, 도어체크, 도어클로져, 현관문, 방화문, 삼화정밀, K630, K1620, K1630, K1600, K2630, K630F, 스톱형, 정지형, 방화형, 내화형, 일자브라켓, 오일, 철물박사"
  },{
   name:"무타공·주키 도어락", full:"무타공·주키 도어락 설치 방법", category:"문·잠금장치", icon:"🚪",
   spec:"무타공 도어락 · 주키 · 설치 영상 2편",
@@ -1086,6 +1107,7 @@ var SIT=[
   {q:"에어컨이나 건조기 같은 큰 가전을 멀티탭에 연결해서 써도 되나요?",rec:["누전차단 고용량 멀티탭 (2구 · 3구)"],why:"소비전력이 큰 가전을 일반 멀티탭(2,200W)에 연결하면 화재 위험이 높아집니다. 고용량 멀티탭은 최대 4,000W까지 쓸 수 있고 누전·과부하 차단기가 달려 있습니다. 대형 가전은 벽 콘센트에 바로 연결하는 것이 가장 좋고, 벽 콘센트의 최대 전력(16A인 경우가 많고 3,520W)을 넘기지 않도록 함께 안내해 주세요."}
  ]},
  {g:"문 · 잠금장치",items:[
+  {q:"도어클로저를 달려는데 브라켓을 어떤 걸로 골라야 해요?",rec:["도어클로저"],why:"먼저 문이 밀어서 여는 문인지 당겨서 여는 문인지 확인합니다. 밀어서 여는 문은 문 안쪽(미는 쪽)에 일자 또는 ㄱ자 브라켓을 쓰고(방화문·철문용, 문턱이 없는 곳은 ㄱ자), 당겨서 여는 문은 문 바깥쪽(당기는 쪽)에 ㄷ자 브라켓을 씁니다."},
   {q:"문에 구멍을 더 뚫지 않고 설치할 수 있는 도어락을 찾아요",rec:["무타공·주키 도어락"],why:"상세페이지에 추가 타공 없이 설치할 수 있다고 안내되어 있고, 지문·카드키·비밀번호 3가지 방법으로 열 수 있는 푸시풀 도어락입니다. 상단 구멍을 뚫고 탑서포터를 체결하는 것은 선택사항입니다."}
  ]}
 ];
@@ -1145,6 +1167,7 @@ function buildDetail(p){
   if(p.usage)h+="<div class='sec'><h3>"+esc(p.usageTitle||'사용 방법')+"</h3><div class='steps'>"+p.usage.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(x.t)+"</div></div>";}).join("")+"</div></div>";
   if(p.diagrams)h+="<div class='sec'><h3>설치 도해</h3>"+figs(p.diagrams,'도해')+"</div>";
   if(p.types)h+="<div class='sec'><h3>"+esc(p.typesTitle||'손잡이 종류 구분')+" <span class='refbadge'>참고용</span></h3><p class='refnote'>"+esc(p.typesNote||'고객 문(현관문·방화문·사무실 문)에 맞는 종류를 고르기 위한 구분표입니다.')+"</p><div class='typegrid'>"+p.types.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div>"+(x.parts?"<div class='typelbl'>구성</div><div class='typetxt'>"+esc(x.parts)+"</div>":"")+"<div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>용도</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div>"+(p.typesImage?"<img src='"+esc(p.typesImage)+"' alt='종류 비교표' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";
+  if(p.groups)h+=p.groups.map(function(g){return "<div class='sec'><h3>"+esc(g.title)+"</h3>"+(g.note?"<p class='refnote'>"+esc(g.note)+"</p>":"")+"<div class='typegrid'>"+g.items.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div><div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>"+esc(x.usesLabel||'용도')+"</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div></div>";}).join("");
   if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
   if(p.detailImages&&p.detailImages.length)h+="<div class='sec'><h3>상세 이미지</h3><div style='display:flex;flex-direction:column;width:100%;max-width:"+esc(p.detailMaxWidth||'100%')+";margin:0 auto'>"+p.detailImages.map(function(src,i){return "<img src='"+esc(src)+"' alt='"+esc(p.name)+" 상세 "+(i+1)+"' loading='lazy' style='display:block;width:100%;height:auto;border:1px solid var(--line);border-top-width:0'>";}).join("")+"</div></div>";
