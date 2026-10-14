@@ -170,6 +170,7 @@ button{font-family:inherit}
 .faq .qa{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
 .faq .q{display:flex;gap:10px;padding:12px 14px;font-weight:700;font-size:15px;line-height:1.5;background:#FAF6EE}
 .faq .a{display:flex;gap:10px;padding:12px 14px;font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
+.faq .tl{display:inline-block;margin-top:6px;font-size:12.5px;font-weight:600;color:#B45309;text-decoration:none}
 .faq .mk{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;background:var(--signal)}
 .faq .a .mk{background:#6B7280}
 .cautions{list-style:none;background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:12px;padding:8px 16px}
@@ -935,6 +936,60 @@ var PRODUCTS=[
   confirmNote:"시공 순서는 상세페이지에 표기가 없습니다. 영상과 제조사 설명서로 확인해 추가해 주세요.",
   keywords:"토우앙카, 자천공앙카, 자천공, 마이토우, mytow, TS, TA, TS35, TS55, TS56, TA30, TA50, TA70, 스피드앙카, 석고앙카, 석고보드앙카, 앙카, 진동, 석고보드, 액자, 시계, 커튼, 거울, 행거, 벽걸이에어컨, 블라인드, 철물박사"
  },{
+  name:"목재 타공 비트 종류와 고르는 법", full:"목재 타공 비트 종류 · 고르는 법 (목공용 · 홀쏘 · 보링비트)", category:"앙카·고정용품", icon:"🪵",
+  spec:"보링비트 · 홀쏘 · 일반 목공용 드릴비트 · 영상 · Q&A",
+  summary:"나무에 구멍을 뚫는 도구는 마감과 구멍 크기에 따라 달라집니다. 보링비트, 홀쏘, 일반 목공용 드릴비트를 구분하고 고객 작업에 맞게 고르는 법을 영상과 Q&A로 익힙니다.",
+  one:"나무 구멍은 '얼마나 깔끔해야 하는지'와 '얼마나 큰지'로 도구를 고릅니다. 깔끔한 마감이 필요하면 보링비트, 아주 큰 구멍이면 홀쏘, 빠르고 간단한 기초 타공이면 일반 목공용 드릴비트입니다.",
+  uses:"싱크대 문짝 경첩 구멍, 나무 정밀 타공, 대형 구멍 타공, 기초 타공",
+  image:"img/boringbit.jpg",
+  video:{id:"djLhJ4lOtLs",start:0,note:""},
+  usageTitle:"비트 고르는 순서 (고객에게 이렇게 물어보세요)",
+  usage:[
+    {t:"먼저 물어봅니다. \"나무에 어떤 구멍을 뚫으실 건가요? 구멍 크기는 어느 정도인가요?\""},
+    {t:"60mm보다 큰 구멍이면 홀쏘를 씁니다. 보링비트는 보통 60mm 정도까지만 나옵니다."},
+    {t:"싱크대 문짝에 경첩 머리를 묻는 구멍처럼 바닥이 평평해야 하거나, 뒷면이 터지면 안 되는 정교한 작업이면 보링비트를 씁니다."},
+    {t:"마감이 중요하지 않은 기초 타공이나 가벼운 작업은 일반 목공용 드릴비트로 빠르게 뚫습니다."},
+    {t:"보링비트 중에서는 날 끝이 톱니 모양인 제품이 목재를 더 세밀하게 깎아 타공 품질이 우수합니다."}
+  ],
+  groups:[
+    {
+      title:"보링비트 (가장 깔끔한 마감)",
+      note:"보링비트는 구멍의 바닥면을 평평하게 깎아줍니다. 아래 이미지는 보링비트의 모양 예시입니다.",
+      image:"img/boringbit.jpg",
+      items:[
+        {no:"1",name:"보링비트",traitsLabel:"특징",traits:["타공 면의 테두리가 매우 매끄럽고, 나무 뒷면이 쪼개지거나 터지는 현상이 거의 없습니다.","구멍 바닥면을 평평하게 깎아줘 매립형 하드웨어 설치에 필수적입니다.","날 끝이 톱니 모양인 제품이 더 정교하게 깎아냅니다.","보통 60mm 정도까지만 나옵니다."],usesLabel:"어디에?",uses:["싱크대 문짝 경첩 머리 매립 구멍","정교한 나무 타공"]}
+      ]
+    },
+    {
+      title:"홀쏘 (큰 구멍용)",
+      note:"홀쏘는 비트 본체와 드릴을 연결해 주는 '아바'를 결합해 사용합니다. 아래 이미지는 홀쏘의 모양 예시입니다.",
+      image:"img/holesaw.jpg",
+      items:[
+        {no:"2",name:"홀쏘",traitsLabel:"특징",traits:["최대 250mm 크기까지 가능합니다.","비트 본체와 드릴을 연결해 주는 '아바'를 결합해서 씁니다."],usesLabel:"어디에?",uses:["60mm 이상의 대형 타공"]}
+      ]
+    },
+    {
+      title:"일반 목공용 드릴비트 (빠르고 간편)",
+      note:"앞의 '드릴비트 종류와 용도별 사용법' 카드의 목공용 비트와 이어서 보세요.",
+      items:[
+        {no:"3",name:"일반 목공용 드릴비트",traitsLabel:"장단점",traits:["장점: 시공 속도가 빠르고 간편합니다.","단점: 타공 면이 거칠고 나무 뒷면이 지저분하게 깨지는 경우가 많습니다."],usesLabel:"어디에?",uses:["깔끔한 마감이 중요하지 않은 기초 타공","가벼운 작업"]}
+      ]
+    }
+  ],
+  faq:[
+    {q:"나무에 구멍을 뚫을 때 가장 마감이 깔끔하게 나오는 도구는 무엇인가요?",a:"'보링 비트'가 가장 깔끔하게 뚫립니다. 다른 도구들에 비해 타공 면의 테두리가 매우 매끄럽고, 특히 나무 뒷면이 쪼개지거나 터지는 현상이 거의 없어 정교한 작업에 가장 적합합니다.",t:173},
+    {q:"보링 비트는 주로 어떤 작업에 사용하나요?",a:"주로 싱크대 문짝에 경첩 머리를 매립하기 위한 구멍을 뚫을 때 사용합니다. 구멍의 바닥면을 평평하게 깎아주기 때문에 매립형 하드웨어를 설치할 때 필수적인 도구입니다.",t:91},
+    {q:"60mm 이상의 아주 큰 구멍을 뚫어야 할 때는 어떤 도구가 필요한가요?",a:"보링 비트는 보통 60mm 정도까지만 나오기 때문에, 그 이상의 대형 타공이 필요할 때는 '홀쏘'를 사용해야 합니다. 홀쏘는 최대 250mm 크기까지 가능하며, 비트 본체와 드릴을 연결해 주는 '아바'를 결합하여 사용합니다.",t:68},
+    {q:"일반 목공용 드릴 비트의 장단점은 무엇인가요?",a:"시공 속도가 빠르고 간편하지만, 타공 면이 거칠고 나무 뒷면이 지저분하게 깨지는 경우가 많습니다. 깔끔한 마감이 중요하지 않은 기초 타공이나 가벼운 작업에 주로 쓰입니다.",t:142},
+    {q:"보링 비트 중에서 더 성능이 좋은 제품을 고르는 팁이 있나요?",a:"날 끝부분이 톱니 모양으로 처리된 보링 비트를 선택해 보세요. 일반적인 날 형태보다 목재를 더 세밀하고 정교하게 깎아내기 때문에 타공 품질이 훨씬 우수합니다.",t:106}
+  ],
+  cautions:[
+    "깔끔한 마감과 평평한 구멍 바닥이 필요하면 보링비트, 60mm 이상 큰 구멍은 홀쏘, 기초 타공은 일반 목공용 드릴비트입니다.",
+    "일반 목공용 드릴비트는 나무 뒷면이 지저분하게 깨질 수 있습니다."
+  ],
+  confirmNote:"보링비트·홀쏘의 규격(지름 · 길이)과 홀쏘 아바 종류, 드릴 회전수 같은 작업 조건은 자료가 없어 넣지 않았습니다. 이미지는 예시 제품 사진이며, 홀쏘 이미지에 보이는 제품 표기는 무시하셔도 됩니다.",
+  keywords:"보링비트, 보링 비트, 홀쏘, 홀소, 아바, 목공용, 목재 타공, 나무 구멍, 경첩 구멍, 싱크대 경첩, 매립, 톱니날, 드릴비트, 목공비트, 대형 타공"
+ },{
   name:"드릴비트 종류와 용도별 사용법", full:"드릴비트 종류 · 용도별 사용법 (목공 · 철공 · 콘크리트 · 타일)", category:"앙카·고정용품", icon:"🔧",
   spec:"목공용 · 철공용 · 콘크리트용 · 타일용 · 영상 · Q&A",
   summary:"뚫을 재료(나무·철·콘크리트·타일)에 따라 드릴비트가 다릅니다. 재료별 비트 구분법과 드릴 설정, 오래 쓰는 방법을 영상과 Q&A로 익힙니다.",
@@ -1198,6 +1253,7 @@ var SIT=[
  {g:"앙카 · 고정용품",items:[
   {q:"석고보드 벽에 조명기구나 분전반, 전선관을 고정하고 싶어요",rec:["석콕이지앙카 (10개입)"],why:"망치로 박고 피스로 구조물을 고정하는 석고보드용 앙카이며, 상세페이지에 브라켓·분전반·조명기구·전선관 용도가 안내되어 있습니다. 모재 두께가 12mm 이하인 경우에만 쓸 수 있다고 꼭 알려주세요."},
   {q:"석고보드 벽에 거울이나 벽걸이 에어컨처럼 진동이 있고 무거운 물건을 달고 싶어요",rec:["토우앙카 (TS · TA)"],why:"TA 시리즈는 진동흡수력이 뛰어나다고 안내되어 있고 용도에 거울, 행거, 벽걸이 에어컨이 포함됩니다. 석고보드 두께에 맞춰 TA30(5~10mm), TA50(10~15mm), TA70(15~50mm) 중에서 골라주세요."},
+  {q:"나무에 큰 구멍이나 경첩 구멍을 깔끔하게 뚫고 싶어요. 어떤 비트가 좋아요?",rec:["목재 타공 비트 종류와 고르는 법"],why:"깔끔한 마감과 평평한 바닥이 필요하면 보링비트(보통 60mm까지), 60mm 이상 큰 구멍은 홀쏘(최대 250mm, 아바 결합)입니다. 깔끔함이 중요하지 않은 기초 작업은 일반 목공용 드릴비트로 빠르게 뚫습니다."},
   {q:"콘크리트 벽이나 타일에 구멍을 뚫으려는데 드릴비트를 어떻게 골라요?",rec:["드릴비트 종류와 용도별 사용법"],why:"콘크리트는 콘크리트용 비트를 해머 드릴 모드(망치 모양)로 뚫습니다. 타일은 처음에 일반 드릴 모드로 타일 표면만 뚫고, 안쪽 콘크리트 층이 나오면 전용 비트로 바꿔 해머 모드로 전환합니다. 영상과 Q&A를 함께 보여드리세요."},
   {q:"콘크리트에 구조물을 고정하려는데 앙카 규격과 드릴 구멍을 어떻게 골라요?",rec:["세트앙카 설치 방법 (콘크리트 고정)"],why:"규격표에 볼트 규격별 드릴비트 두께와 뚫는 깊이가 정리되어 있습니다. 예를 들어 M10은 드릴비트 14mm·뚫는 깊이 44mm입니다. 허용 하중은 제조사마다 다르니 확인 후 안내해 주세요. 설치 영상도 함께 보여드리세요."},
   {q:"웨지앙카나 세트앙카를 박으려는데 드릴 구멍을 몇 mm로 뚫어야 하나요",rec:["웨지앙카"],why:"담당자 안내 기준으로 웨지앙카는 10mm, 세트앙카는 14mm로 천공합니다. 웨지앙카 옵션은 10×75, 10×100, 12×120이고, 12×120 옵션의 천공 지름은 확인 후 안내해 주세요."},
@@ -1282,7 +1338,7 @@ function buildDetail(p){
   if(p.related)h+="<div class='sec'><h3>"+esc(p.relatedTitle||'함께 쓰는 관련 제품')+(p.relatedTitle?"":" <span class='refbadge'>참고용</span>")+"</h3>"+p.related.map(function(r){return "<div class='relcard'><div class='reltitle'>"+esc(r.name)+"</div><p class='refnote' style='margin:4px 0 12px'>"+esc(r.note)+"</p><div class='fig-grid'>"+(r.imgs||[]).map(function(m){return "<div class='fig'><div class='img'><img src='"+esc(m.src)+"' alt='"+esc(m.cap)+"' loading='lazy'></div><div class='cap'>"+esc(m.cap)+"</div></div>";}).join("")+"</div><div class='steps' style='margin-top:12px'>"+r.install.map(function(t,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(t)+"</div></div>";}).join("")+"</div><div class='vnote'>"+esc(r.spec)+"</div>"+(r.detail?"<img src='"+esc(r.detail)+"' alt='"+esc(r.name)+" 상세' loading='lazy' style='display:block;width:100%;height:auto;margin-top:12px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";}).join("")+"</div>";
   if(p.refs&&p.refs.length)h+="<div class='sec'><h3>이런 제품도 있어요 <span class='refbadge'>참고용</span></h3><p class='refnote'>같은 계열의 다른 제품 영상입니다. 위 자동바(8m×50mm 인성)와 규격·사용법이 다를 수 있으니 참고로만 보세요.</p>"+p.refs.map(function(r){return "<div class='refitem'><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(r.id)+"?rel=0' title='"+esc(r.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'><span class='refbadge'>참고용</span> "+esc(r.title)+"<span class='refby'> · "+esc(r.by)+"</span></div></div>";}).join("")+"</div>";
   if(p.links)h+="<div class='sec'><h3>제품 홈페이지</h3><div class='linkrow'>"+p.links.map(function(l){return "<a class='linkbtn' href='"+esc(l.url)+"' target='_blank' rel='noopener noreferrer'>"+esc(l.label)+" <span>↗</span></a>";}).join("")+"</div></div>";
-  if(p.faq)h+="<div class='sec'><h3>자주 묻는 질문 (Q&A)</h3><div class='faq'>"+p.faq.map(function(x){return "<div class='qa'><div class='q'><span class='mk'>Q</span><span>"+esc(x.q)+"</span></div><div class='a'><span class='mk'>A</span><span>"+esc(x.a)+"</span></div></div>";}).join("")+"</div></div>";
+  if(p.faq)h+="<div class='sec'><h3>자주 묻는 질문 (Q&A)</h3><div class='faq'>"+p.faq.map(function(x){return "<div class='qa'><div class='q'><span class='mk'>Q</span><span>"+esc(x.q)+"</span></div><div class='a'><span class='mk'>A</span><span>"+esc(x.a)+(x.t!=null&&p.video?"<br><a class='tl' target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v="+esc(p.video.id)+"&t="+x.t+"s'>▶ 영상 "+('0'+Math.floor(x.t/60)).slice(-2)+":"+('0'+x.t%60).slice(-2)+" 부분 보기</a>":"")+"</span></div></div>";}).join("")+"</div></div>";
   if(p.cautions&&p.cautions.length)h+="<div class='sec'><h3>주의사항</h3><ul class='cautions'>"+p.cautions.map(function(c){return "<li>"+esc(c)+"</li>";}).join("")+"</ul>"+(p.confirmNote?"<div class='confirm'><b>확인 필요</b> — "+esc(p.confirmNote)+"</div>":"")+"</div>";
   return h;
 }
