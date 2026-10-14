@@ -166,6 +166,12 @@ button{font-family:inherit}
 .dims .row>div:nth-child(odd){background:var(--brand-tint);font-weight:800}
 .dims .row>div:nth-child(even){font-family:var(--mono);font-weight:700}
 .dims .row:last-child>div{border-bottom:0}
+.faq{display:flex;flex-direction:column;gap:12px}
+.faq .qa{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+.faq .q{display:flex;gap:10px;padding:12px 14px;font-weight:700;font-size:15px;line-height:1.5;background:#FAF6EE}
+.faq .a{display:flex;gap:10px;padding:12px 14px;font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
+.faq .mk{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;background:var(--signal)}
+.faq .a .mk{background:#6B7280}
 .cautions{list-style:none;background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:12px;padding:8px 16px}
 .cautions li{position:relative;padding:9px 0 9px 26px;font-size:14px;color:#5A4321;line-height:1.55;border-bottom:1px solid rgba(240,211,172,.5)}
 .cautions li:last-child{border-bottom:0}
@@ -879,6 +885,53 @@ var PRODUCTS=[
   confirmNote:"시공 순서는 상세페이지에 표기가 없습니다. 영상과 제조사 설명서로 확인해 추가해 주세요.",
   keywords:"토우앙카, 자천공앙카, 자천공, 마이토우, mytow, TS, TA, TS35, TS55, TS56, TA30, TA50, TA70, 스피드앙카, 석고앙카, 석고보드앙카, 앙카, 진동, 석고보드, 액자, 시계, 커튼, 거울, 행거, 벽걸이에어컨, 블라인드, 철물박사"
  },{
+  name:"드릴비트 종류와 용도별 사용법", full:"드릴비트 종류 · 용도별 사용법 (목공 · 철공 · 콘크리트 · 타일)", category:"앙카·고정용품", icon:"🔧",
+  spec:"목공용 · 철공용 · 콘크리트용 · 타일용 · 영상 · Q&A",
+  summary:"뚫을 재료(나무·철·콘크리트·타일)에 따라 드릴비트가 다릅니다. 재료별 비트 구분법과 드릴 설정, 오래 쓰는 방법을 영상과 Q&A로 익힙니다.",
+  one:"드릴비트는 뚫는 재료에 맞는 것을 써야 구멍이 깔끔하고 비트도 오래 갑니다. 고객이 무엇을 뚫으려는지 먼저 묻고, 아래 순서로 맞는 비트와 드릴 설정을 안내합니다.",
+  uses:"목재 타공, 철판 타공, 콘크리트 벽 타공, 타일 타공",
+  image:"img/drillbit-set.jpg",
+  video:{id:"de0dvoGBvmU",start:0,note:""},
+  usageTitle:"비트 고르는 순서 (고객에게 이렇게 물어보세요)",
+  usage:[
+    {t:"먼저 물어봅니다. \"무엇을 뚫으실 건가요? 나무, 철, 콘크리트, 타일 중 어느 건가요?\""},
+    {t:"나무라면 목공용 비트, 철(금속)이라면 철공용 비트를 씁니다."},
+    {t:"콘크리트 벽이라면 콘크리트용 비트를 쓰고, 드릴을 '해머 드릴' 모드(망치 모양)에 맞춥니다."},
+    {t:"타일이라면 처음에는 일반 '드릴 모드'로 타일 표면만 뚫고, 안쪽 콘크리트 층이 나오면 비트를 바꾸고 해머 모드로 전환합니다."}
+  ],
+  groups:[
+    {
+      title:"용도별 드릴비트 (이미지 순서: 목공용 → 철공용 → 콘크리트용)",
+      note:"아래 이미지는 왼쪽부터 목공용(WOOD WORKING DRILL), 철공용(TWIST DRILL), 콘크리트용(MASONRY DRILL) 순서입니다. 이미지 아래 숫자는 비트 굵기 표기이며, 세트 구성의 예시입니다.",
+      image:"img/drillbit-set.jpg",
+      items:[
+        {no:"1",name:"목공용 비트 (WOOD WORKING DRILL)",traitsLabel:"특징",traits:["끝이 뾰족해 정확한 위치에 자리를 잡기 좋습니다.","나선 홈이 넓어 나무 찌꺼기를 위로 빠르게 배출합니다.","나무에는 목공용 전용 비트를 쓰는 것이 훨씬 깔끔합니다."],usesLabel:"어디에?",uses:["나무(목재) 타공","아주 작은 구멍(6mm 이하)은 철재용 비트를 활용하기도 합니다."]},
+        {no:"2",name:"철공용 비트 (TWIST DRILL)",traitsLabel:"특징",traits:["금속을 뚫을 때 생기는 열이 비트 수명을 줄입니다.","두꺼운 철판이나 구멍이 여러 개일 때는 중간중간 비트를 물에 담가 식혀줍니다."],usesLabel:"어디에?",uses:["철판 · 금속 타공","바닥에 있는 철판은 물을 살짝 고이게 한 뒤 뚫으면 열을 효과적으로 억제합니다."]},
+        {no:"3",name:"콘크리트용 비트 (MASONRY DRILL)",traitsLabel:"특징",traits:["끝단 머리가 뭉툭하고 넓적한 날개가 달려 있어 일반 비트와 쉽게 구분됩니다.","반드시 '해머 드릴' 기능이 있는 드릴을 쓰고, 모드를 '망치 모양' 그림에 맞춥니다."],usesLabel:"어디에?",uses:["콘크리트 벽 타공"]}
+      ]
+    },
+    {
+      title:"타일용 드릴비트 (단독 이미지)",
+      note:"타일은 해머 기능으로 시작하면 바로 깨집니다. 타일 전용 비트를 쓰면 파손 위험을 줄일 수 있습니다.",
+      image:"img/drillbit-tile.jpg",
+      items:[
+        {no:"4",name:"타일 뚫는 순서 (화장실 타일 예시)",traitsLabel:"순서",traits:["1. 일반 '드릴 모드'로 시작해 타일 표면만 뚫습니다.","2. 안쪽 콘크리트 층이 나오면 전용 비트로 교체합니다.","3. 그때 해머 모드로 전환합니다."],usesLabel:"어디에?",uses:["화장실 · 주방 등 타일 벽"]}
+      ]
+    }
+  ],
+  faq:[
+    {q:"드릴 비트가 금방 무뎌지는 것을 막는 방법이 있나요?",a:"금속 타공 시 발생하는 열이 비트의 수명을 단축시킵니다. 두꺼운 철판이나 여러 개의 구멍을 뚫을 때는 중간중간 드릴 비트를 물에 담가 식혀주며 작업하는 것이 좋습니다. 바닥에 있는 철판이라면 물을 살짝 고이게 한 뒤 뚫으면 열을 효과적으로 억제할 수 있습니다."},
+    {q:"나무를 뚫을 때 일반 드릴 비트를 써도 되나요?",a:"가능하지만 목공용 전용 비트를 쓰는 것이 훨씬 깔끔합니다. 목공용 비트는 끝이 뾰족해 정확한 위치에 자리를 잡기 좋고, 나선 홈이 넓어 나무 찌꺼기를 위로 빠르게 배출해 줍니다. 다만 아주 작은 구멍(6mm 이하)은 철재용 비트를 활용하기도 합니다."},
+    {q:"콘크리트 벽을 뚫을 때 드릴 설정을 어떻게 해야 하나요?",a:"반드시 '해머 드릴' 기능을 지원하는 드릴을 사용해야 하며, 모드 설정을 '망치 모양' 그림에 맞춰야 합니다. 콘크리트용 비트는 끝단 머리가 뭉툭하고 넓적한 날개가 달려 있어 일반 비트와 쉽게 구분됩니다."},
+    {q:"화장실 타일을 깨뜨리지 않고 안전하게 뚫는 비결은?",a:"처음부터 해머 기능을 쓰면 타일이 바로 깨집니다. 반드시 일반 '드릴 모드'로 시작해 타일 표면만 뚫은 뒤, 안쪽 콘크리트 층이 나오면 전용 비트로 교체하고 그때 해머 모드로 전환해야 합니다. 타일용 전용 비트를 사용하면 타일 파손 위험을 줄일 수 있습니다."}
+  ],
+  cautions:[
+    "콘크리트는 해머 드릴 모드(망치 모양)로, 타일은 처음에 일반 드릴 모드로 뚫습니다. 타일을 해머 모드로 시작하면 바로 깨집니다.",
+    "금속을 뚫을 때는 열이 비트 수명을 줄이므로 중간중간 물에 식혀줍니다."
+  ],
+  confirmNote:"드릴비트 굵기·길이 기준과 영상 속 구체적인 작업 순서는 아직 넣지 않았습니다. 영상을 확인해 보완해 주세요. 타일용 단독 이미지는 포장 라벨이 일본어(모르타르·블록·벽돌용)로 표기되어 있어, 타일 전용 제품 사진으로 바꿀 수 있으면 교체해 주세요.",
+  keywords:"드릴비트, 드릴 비트, 비트, 목공용, 철공용, 콘크리트용, 타일용, 해머드릴, 해머 드릴, 임팩트, 타공, 천공, 무뎌짐, 타일 깨짐, 화장실 타일, 트위스트, 목공비트, 철재용"
+ },{
   name:"세트앙카 설치 방법 (콘크리트 고정)", full:"세트앙카 설치 방법 · 규격 고르기 (콘크리트 고정)", category:"앙카·고정용품", icon:"🔩",
   spec:"M6~M22 · 드릴 구멍 → 앙카 삽입 · 설치 영상",
   summary:"콘크리트에 구멍을 뚫고 세트앙카를 박아 고정하는 방법을 영상으로 익히고, 규격표로 볼트 규격에 맞는 드릴비트와 뚫는 깊이를 고릅니다.",
@@ -1095,6 +1148,7 @@ var SIT=[
  {g:"앙카 · 고정용품",items:[
   {q:"석고보드 벽에 조명기구나 분전반, 전선관을 고정하고 싶어요",rec:["석콕이지앙카 (10개입)"],why:"망치로 박고 피스로 구조물을 고정하는 석고보드용 앙카이며, 상세페이지에 브라켓·분전반·조명기구·전선관 용도가 안내되어 있습니다. 모재 두께가 12mm 이하인 경우에만 쓸 수 있다고 꼭 알려주세요."},
   {q:"석고보드 벽에 거울이나 벽걸이 에어컨처럼 진동이 있고 무거운 물건을 달고 싶어요",rec:["토우앙카 (TS · TA)"],why:"TA 시리즈는 진동흡수력이 뛰어나다고 안내되어 있고 용도에 거울, 행거, 벽걸이 에어컨이 포함됩니다. 석고보드 두께에 맞춰 TA30(5~10mm), TA50(10~15mm), TA70(15~50mm) 중에서 골라주세요."},
+  {q:"콘크리트 벽이나 타일에 구멍을 뚫으려는데 드릴비트를 어떻게 골라요?",rec:["드릴비트 종류와 용도별 사용법"],why:"콘크리트는 콘크리트용 비트를 해머 드릴 모드(망치 모양)로 뚫습니다. 타일은 처음에 일반 드릴 모드로 타일 표면만 뚫고, 안쪽 콘크리트 층이 나오면 전용 비트로 바꿔 해머 모드로 전환합니다. 영상과 Q&A를 함께 보여드리세요."},
   {q:"콘크리트에 구조물을 고정하려는데 앙카 규격과 드릴 구멍을 어떻게 골라요?",rec:["세트앙카 설치 방법 (콘크리트 고정)"],why:"규격표에 볼트 규격별 드릴비트 두께와 뚫는 깊이가 정리되어 있습니다. 예를 들어 M10은 드릴비트 14mm·뚫는 깊이 44mm입니다. 허용 하중은 제조사마다 다르니 확인 후 안내해 주세요. 설치 영상도 함께 보여드리세요."},
   {q:"웨지앙카나 세트앙카를 박으려는데 드릴 구멍을 몇 mm로 뚫어야 하나요",rec:["웨지앙카"],why:"담당자 안내 기준으로 웨지앙카는 10mm, 세트앙카는 14mm로 천공합니다. 웨지앙카 옵션은 10×75, 10×100, 12×120이고, 12×120 옵션의 천공 지름은 확인 후 안내해 주세요."},
   {q:"석고보드 벽에 액자나 시계, 커튼을 달고 싶어요",rec:["토우앙카 (TS · TA)"],why:"상세페이지에 TS 시리즈의 용도로 액자, 시계, 욕실악세사리, 벽면장식물, 커튼, 장식선반이 안내되어 있습니다. TS35는 최대 하중 70kg, TS55·56은 320kg입니다."}
@@ -1177,6 +1231,7 @@ function buildDetail(p){
   if(p.related)h+="<div class='sec'><h3>"+esc(p.relatedTitle||'함께 쓰는 관련 제품')+(p.relatedTitle?"":" <span class='refbadge'>참고용</span>")+"</h3>"+p.related.map(function(r){return "<div class='relcard'><div class='reltitle'>"+esc(r.name)+"</div><p class='refnote' style='margin:4px 0 12px'>"+esc(r.note)+"</p><div class='fig-grid'>"+(r.imgs||[]).map(function(m){return "<div class='fig'><div class='img'><img src='"+esc(m.src)+"' alt='"+esc(m.cap)+"' loading='lazy'></div><div class='cap'>"+esc(m.cap)+"</div></div>";}).join("")+"</div><div class='steps' style='margin-top:12px'>"+r.install.map(function(t,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(t)+"</div></div>";}).join("")+"</div><div class='vnote'>"+esc(r.spec)+"</div>"+(r.detail?"<img src='"+esc(r.detail)+"' alt='"+esc(r.name)+" 상세' loading='lazy' style='display:block;width:100%;height:auto;margin-top:12px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";}).join("")+"</div>";
   if(p.refs&&p.refs.length)h+="<div class='sec'><h3>이런 제품도 있어요 <span class='refbadge'>참고용</span></h3><p class='refnote'>같은 계열의 다른 제품 영상입니다. 위 자동바(8m×50mm 인성)와 규격·사용법이 다를 수 있으니 참고로만 보세요.</p>"+p.refs.map(function(r){return "<div class='refitem'><div class='video'><iframe src='https://www.youtube.com/embed/"+esc(r.id)+"?rel=0' title='"+esc(r.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'><span class='refbadge'>참고용</span> "+esc(r.title)+"<span class='refby'> · "+esc(r.by)+"</span></div></div>";}).join("")+"</div>";
   if(p.links)h+="<div class='sec'><h3>제품 홈페이지</h3><div class='linkrow'>"+p.links.map(function(l){return "<a class='linkbtn' href='"+esc(l.url)+"' target='_blank' rel='noopener noreferrer'>"+esc(l.label)+" <span>↗</span></a>";}).join("")+"</div></div>";
+  if(p.faq)h+="<div class='sec'><h3>자주 묻는 질문 (Q&A)</h3><div class='faq'>"+p.faq.map(function(x){return "<div class='qa'><div class='q'><span class='mk'>Q</span><span>"+esc(x.q)+"</span></div><div class='a'><span class='mk'>A</span><span>"+esc(x.a)+"</span></div></div>";}).join("")+"</div></div>";
   if(p.cautions&&p.cautions.length)h+="<div class='sec'><h3>주의사항</h3><ul class='cautions'>"+p.cautions.map(function(c){return "<li>"+esc(c)+"</li>";}).join("")+"</ul>"+(p.confirmNote?"<div class='confirm'><b>확인 필요</b> — "+esc(p.confirmNote)+"</div>":"")+"</div>";
   return h;
 }
