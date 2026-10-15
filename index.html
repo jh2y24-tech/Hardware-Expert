@@ -1482,7 +1482,15 @@ function buildDetail(p){
   return h;
 }
 var overlay=document.getElementById('overlay'),detail=document.getElementById('detail'),detailBody=document.getElementById('detailBody');
-function openDetail(p){if(!p)return;detailBody.innerHTML=buildDetail(p);detail.scrollTop=0;overlay.classList.add('open');document.body.style.overflow='hidden';}
+/* 화질 보호: 이미지를 원본 크기보다 크게 늘려 보여주지 않는다 (흐려짐 방지) */
+function capImages(root){
+  Array.prototype.forEach.call(root.querySelectorAll('img'),function(im){
+    if(im.classList.contains('d-hero')||im.classList.contains('vthumb'))return;
+    var cap=function(){if(im.naturalWidth){im.style.maxWidth=im.naturalWidth+'px';im.style.marginLeft='auto';im.style.marginRight='auto';im.style.alignSelf='center';}};
+    if(im.complete)cap();else im.addEventListener('load',cap);
+  });
+}
+function openDetail(p){if(!p)return;detailBody.innerHTML=buildDetail(p);capImages(detailBody);detail.scrollTop=0;overlay.classList.add('open');document.body.style.overflow='hidden';}
 function closeDetail(){overlay.classList.remove('open');document.body.style.overflow='';detailBody.innerHTML='';}
 document.getElementById('close').onclick=closeDetail;
 overlay.onclick=function(e){if(e.target===overlay)closeDetail();};
