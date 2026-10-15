@@ -1058,7 +1058,7 @@ var PRODUCTS=[
     {
       title:"보링비트 (가장 깔끔한 마감)",
       note:"보링비트는 구멍의 바닥면을 평평하게 깎아줍니다. 아래 이미지는 보링비트의 모양 예시입니다.",
-      image:"img/boringbit.jpg",
+      image:"img/boringbit.jpg", imageMaxWidth:"600px",
       items:[
         {no:"1",name:"보링비트",traitsLabel:"특징",traits:["타공 면의 테두리가 매우 매끄럽고, 나무 뒷면이 쪼개지거나 터지는 현상이 거의 없습니다.","구멍 바닥면을 평평하게 깎아줘 매립형 하드웨어 설치에 필수적입니다.","날 끝이 톱니 모양인 제품이 더 정교하게 깎아냅니다.","보통 60mm 정도까지만 나옵니다."],usesLabel:"어디에?",uses:["싱크대 문짝 경첩 머리 매립 구멍","정교한 나무 타공"]}
       ]
@@ -1066,7 +1066,7 @@ var PRODUCTS=[
     {
       title:"홀쏘 (큰 구멍용)",
       note:"홀쏘는 비트 본체와 드릴을 연결해 주는 '아바'를 결합해 사용합니다. 아래 이미지는 홀쏘의 모양 예시입니다.",
-      image:"img/holesaw.jpg",
+      image:"img/holesaw.jpg", imageMaxWidth:"600px",
       items:[
         {no:"2",name:"홀쏘",traitsLabel:"특징",traits:["최대 250mm 크기까지 가능합니다.","비트 본체와 드릴을 연결해 주는 '아바'를 결합해서 씁니다."],usesLabel:"어디에?",uses:["60mm 이상의 대형 타공"]}
       ]
@@ -1074,7 +1074,7 @@ var PRODUCTS=[
     {
       title:"일반 목공용 드릴비트 (빠르고 간편)",
       note:"앞의 '드릴비트 종류와 용도별 사용법' 카드의 목공용 비트와 이어서 보세요.",
-      image:"img/woodbit.jpg",
+      image:"img/woodbit.jpg", imageMaxWidth:"600px",
       items:[
         {no:"3",name:"일반 목공용 드릴비트",traitsLabel:"장단점",traits:["장점: 시공 속도가 빠르고 간편합니다.","단점: 타공 면이 거칠고 나무 뒷면이 지저분하게 깨지는 경우가 많습니다."],usesLabel:"어디에?",uses:["깔끔한 마감이 중요하지 않은 기초 타공","가벼운 작업"]}
       ]
@@ -1122,7 +1122,7 @@ var PRODUCTS=[
     {
       title:"타일용 드릴비트 (단독 이미지)",
       note:"타일은 해머 기능으로 시작하면 바로 깨집니다. 타일 전용 비트를 쓰면 파손 위험을 줄일 수 있습니다.",
-      image:"img/drillbit-tile.jpg",
+      image:"img/drillbit-tile.jpg", imageMaxWidth:"260px",
       items:[
         {no:"4",name:"타일 뚫는 순서 (화장실 타일 예시)",traitsLabel:"순서",traits:["1. 일반 '드릴 모드'로 시작해 타일 표면만 뚫습니다.","2. 안쪽 콘크리트 층이 나오면 전용 비트로 교체합니다.","3. 그때 해머 모드로 전환합니다."],usesLabel:"어디에?",uses:["화장실 · 주방 등 타일 벽"]}
       ]
@@ -1444,7 +1444,7 @@ function buildDetail(p){
   if(p.usage)h+="<div class='sec'><h3>"+esc(p.usageTitle||'사용 방법')+"</h3><div class='steps'>"+p.usage.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'>"+esc(x.t)+"</div></div>";}).join("")+"</div></div>";
   if(p.diagrams)h+="<div class='sec'><h3>설치 도해</h3>"+figs(p.diagrams,'도해')+"</div>";
   if(p.types)h+="<div class='sec'><h3>"+esc(p.typesTitle||'손잡이 종류 구분')+" <span class='refbadge'>참고용</span></h3><p class='refnote'>"+esc(p.typesNote||'고객 문(현관문·방화문·사무실 문)에 맞는 종류를 고르기 위한 구분표입니다.')+"</p><div class='typegrid'>"+p.types.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div>"+(x.parts?"<div class='typelbl'>구성</div><div class='typetxt'>"+esc(x.parts)+"</div>":"")+"<div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>용도</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div>"+(p.typesImage?"<img src='"+esc(p.typesImage)+"' alt='종류 비교표' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";
-  if(p.groups)h+=p.groups.map(function(g){return "<div class='sec'><h3>"+esc(g.title)+"</h3>"+(g.note?"<p class='refnote'>"+esc(g.note)+"</p>":"")+"<div class='typegrid'>"+g.items.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div><div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>"+esc(x.usesLabel||'용도')+"</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div>"+(g.image?"<img src='"+esc(g.image)+"' alt='"+esc(g.title)+"' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";}).join("");
+  if(p.groups)h+=p.groups.map(function(g){return "<div class='sec'><h3>"+esc(g.title)+"</h3>"+(g.note?"<p class='refnote'>"+esc(g.note)+"</p>":"")+"<div class='typegrid'>"+g.items.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div><div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>"+esc(x.usesLabel||'용도')+"</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div>"+(g.image?"<img src='"+esc(g.image)+"' alt='"+esc(g.title)+"' loading='lazy' style='display:block;width:100%;max-width:"+esc(g.imageMaxWidth||'100%')+";height:auto;margin:14px auto 0;border-radius:12px;border:1px solid var(--line);background:#fff'>":"")+"</div>";}).join("");
   if(p.groupVideos)h+="<div class='sec'><h3>"+esc(p.groupVideosTitle||'설치 영상')+"</h3>"+p.groupVideos.map(function(v){return "<div class='refitem'>"+(v.label?"<div class='vlabel'>"+esc(v.label)+"</div>":"")+(v.img?"<img class='vthumb' src='"+esc(v.img)+"' alt='"+esc(v.label||v.title)+"' loading='lazy'>":"")+"<div class='video'><iframe src='https://www.youtube.com/embed/"+esc(v.id)+"?start="+(v.start||0)+"&rel=0' title='"+esc(v.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'>"+esc(v.title)+(v.by?"<span class='refby'> · "+esc(v.by)+"</span>":"")+"</div></div>";}).join("")+"</div>";
   if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
