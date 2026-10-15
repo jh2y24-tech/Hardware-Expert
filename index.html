@@ -524,6 +524,22 @@ var PRODUCTS=[
   confirmNote:"T밸브를 앵글밸브에 끼우는 구체적인 순서(분리·체결 방법), 나사 규격(15A 등), 호스 길이는 자료가 없어 넣지 않았습니다. 영상(설치 장면)을 보고 단계별로 보완해 주세요. 이미지는 예시 제품 사진입니다.",
   keywords:"T밸브, 티밸브, 분기밸브, 분기, 코일호스, 스프레이건, 비데, 비데건, 변기 스프레이, 세면대 스프레이, 거치대, 진공흡착, 연속분사, 수압, 앵글밸브, 욕실, 물 분기"
  },{
+  name:"세면대 수전 교체 방법", full:"세면대 수전 교체 · 탈거 방법", category:"욕실·배관용품", icon:"🚰",
+  spec:"세면대 수전 · 긴다리 세면대 탈거 · 영상 2편",
+  summary:"세면대 수전을 떼어내고 새 수전으로 바꾸는 방법을 영상으로 익힙니다. 긴다리 세면대에서 수전을 탈거하는 방법도 함께 봅니다.",
+  one:"세면대 수전 교체는 기존 수전을 떼어내는 탈거 작업이 먼저입니다. 아래 영상 순서대로 보며 탈거와 교체 과정을 익히고 고객에게 설명하세요.",
+  uses:"세면대 수전 교체, 긴다리 세면대 수전 탈거",
+  image:"img/basinfaucet.jpg",
+  detailImage:"img/faucettool.jpg",
+  videosTitle:"교체 · 탈거 영상",
+  videos:[
+    {label:"긴다리 세면대 탈거 방법",id:"4NFNVNGjAKI",start:0,title:"긴다리 세면대 탈거 방법"},
+    {label:"세면대 수전 교체",id:"vmiXhPquhZA",start:0,title:"세면대 수전 교체 영상"}
+  ],
+  confirmNote:"영상 링크만 받아 영상 속 작업 순서와 Q&A는 아직 넣지 않았습니다. 순서나 Q&A를 알려주시면 단계별로 채우겠습니다. 두 번째 영상의 제목과 상세 이미지에 넣은 검은색 도구(수전 탈거용 공구로 보임)의 이름·용도는 확인이 필요합니다.",
+  cautions:["영상 속 구체적인 탈거·교체 순서는 확인 후 보완됩니다."],
+  keywords:"세면대 수전, 수전 교체, 수전 탈거, 긴다리 세면대, 세면대 탈거, 세면대 수전 교환, 수전 공구, 욕실 수전, 원홀 수전"
+ },{
   name:"앵글밸브", full:"관붙이 앵글밸브 / 일체형", category:"욕실·배관용품", icon:"🔧",
   spec:"관붙이 · 일체형 · 15A(15mm)",
   summary:"세면기·양변기·수도꼭지 앞에 다는 관붙이 앵글밸브입니다. 교체 방법을 영상으로 익힙니다.",
@@ -644,6 +660,10 @@ var PRODUCTS=[
     "일자·ㄱ자는 문을 미는 쪽(내부), ㄷ자는 문을 당기는 쪽(외부)에 설치합니다."
   ],
   confirmNote:"브라켓 선택 이미지의 ㄷ자 설명 끝에 '반대일 경우에는 외부에 설치'라고 적혀 있는데, 일자·ㄱ자와 같은 문구라 오타일 수 있습니다. 모델별(K630 · K1600 등)로 쓸 수 있는 브라켓과 함께 제조사 자료로 확인해 주세요.",
+  groupVideosTitle:"브라켓 영상",
+  groupVideos:[
+    {label:"브라켓 선택 · 설치",id:"qgr-XNvYg38",start:0,title:"도어클로저 브라켓 영상",by:"철물박사 TV"}
+  ],
   videosTitle:"설치 · 교체 영상",
   videos:[
     {label:"K630 (문을 미는 쪽 설치 · 일자브라켓)",id:"p0A4t4TWxx0",start:18,title:"삼화정밀K630 모델설치방법",by:"ASSA ABLOY삼화정밀"},
@@ -1383,6 +1403,7 @@ function buildDetail(p){
   if(p.diagrams)h+="<div class='sec'><h3>설치 도해</h3>"+figs(p.diagrams,'도해')+"</div>";
   if(p.types)h+="<div class='sec'><h3>"+esc(p.typesTitle||'손잡이 종류 구분')+" <span class='refbadge'>참고용</span></h3><p class='refnote'>"+esc(p.typesNote||'고객 문(현관문·방화문·사무실 문)에 맞는 종류를 고르기 위한 구분표입니다.')+"</p><div class='typegrid'>"+p.types.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div>"+(x.parts?"<div class='typelbl'>구성</div><div class='typetxt'>"+esc(x.parts)+"</div>":"")+"<div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>용도</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div>"+(p.typesImage?"<img src='"+esc(p.typesImage)+"' alt='종류 비교표' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";
   if(p.groups)h+=p.groups.map(function(g){return "<div class='sec'><h3>"+esc(g.title)+"</h3>"+(g.note?"<p class='refnote'>"+esc(g.note)+"</p>":"")+"<div class='typegrid'>"+g.items.map(function(x){return "<div class='typecard'><div class='typehead'><span class='typeno'>"+esc(x.no)+"</span>"+esc(x.name)+"</div><div class='typelbl'>"+esc(x.traitsLabel||'특징')+"</div><ul>"+x.traits.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>"+(x.uses?"<div class='typelbl'>"+esc(x.usesLabel||'용도')+"</div><ul>"+x.uses.map(function(y){return "<li>"+esc(y)+"</li>";}).join("")+"</ul>":"")+"</div>";}).join("")+"</div>"+(g.image?"<img src='"+esc(g.image)+"' alt='"+esc(g.title)+"' loading='lazy' style='display:block;width:100%;height:auto;margin-top:14px;border-radius:12px;border:1px solid var(--line)'>":"")+"</div>";}).join("");
+  if(p.groupVideos)h+="<div class='sec'><h3>"+esc(p.groupVideosTitle||'설치 영상')+"</h3>"+p.groupVideos.map(function(v){return "<div class='refitem'>"+(v.label?"<div class='vlabel'>"+esc(v.label)+"</div>":"")+(v.img?"<img class='vthumb' src='"+esc(v.img)+"' alt='"+esc(v.label||v.title)+"' loading='lazy'>":"")+"<div class='video'><iframe src='https://www.youtube.com/embed/"+esc(v.id)+"?start="+(v.start||0)+"&rel=0' title='"+esc(v.title)+"' loading='lazy' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div class='reftitle'>"+esc(v.title)+(v.by?"<span class='refby'> · "+esc(v.by)+"</span>":"")+"</div></div>";}).join("")+"</div>";
   if(p.parts)h+="<div class='sec'><h3>각 부분 이름과 역할</h3><div class='steps'>"+p.parts.map(function(x,i){return "<div class='step'><span class='no'>"+(i+1)+"</span><div class='t'><b>"+esc(x.name)+"</b><br>"+esc(x.desc)+"</div></div>";}).join("")+"</div></div>";
   if(p.dims)h+="<div class='sec'><h3>제품 사이즈</h3><div class='dims'>"+p.dims.map(function(d){return "<div class='row'><div>"+esc(d.k)+"</div><div>"+esc(d.v)+"</div></div>";}).join("")+"</div>"+(p.dimsNote?"<div class='vnote'>"+esc(p.dimsNote)+"</div>":"")+"</div>";
   if(p.detailImages&&p.detailImages.length)h+="<div class='sec'><h3>상세 이미지</h3><div style='display:flex;flex-direction:column;width:100%;max-width:"+esc(p.detailMaxWidth||'100%')+";margin:0 auto'>"+p.detailImages.map(function(src,i){return "<img src='"+esc(src)+"' alt='"+esc(p.name)+" 상세 "+(i+1)+"' loading='lazy' style='display:block;width:100%;height:auto;border:1px solid var(--line);border-top-width:0'>";}).join("")+"</div></div>";
