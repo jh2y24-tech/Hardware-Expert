@@ -165,6 +165,7 @@ button{font-family:inherit}
 .step .no{flex:none;width:30px;height:30px;background:var(--dark);color:var(--brand);border-radius:8px;font-family:var(--mono);font-weight:800;font-size:14px;display:grid;place-items:center}
 .step .t{font-size:14.5px;line-height:1.6;padding-top:3px}
 /* dims */
+.hit{font-weight:800;color:#1A1A1A;padding:0 4px;margin:0 1px;border-radius:3px;background:linear-gradient(180deg,transparent 35%,var(--brand-tint2) 35%,var(--brand) 100%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .dims{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
 .dims .row{display:grid;grid-template-columns:36% 64%;font-size:14.5px}
 .dims .row>div{padding:12px 16px;border-bottom:1px solid #F3ECCF}
@@ -1068,7 +1069,7 @@ var PRODUCTS=[
   one:"먼저 문 크기와 무게로 K6200(중급형)과 K8000 Premium(고급형 · 대형 중량문)을 나누고, 사우나·워터파크처럼 물이 닿는 곳이면 완전방수형 K8000WP를 안내합니다.",
   uses:"강화유리문, 스테인레스문, 아파트·상가·빌딩 현관, 대형 중량문, 사우나, 워터파크",
   image:"img/floorhinge-k6200.webp", heroMax:"560px",
-  stats:[{k:"취급 모델",v:"K6200 · 다코-K8300 · KKK8300 · K8300 양쪽정지형 · K8300 · K8500 양쪽정지형 · K8500"},{k:"정지 각도",v:"90˚ · 115˚ (전 시리즈 공통)"},{k:"기본형",v:"양쪽 정지형"},{k:"옵션형",v:"양쪽 논스톱형(N) · 한쪽 정지형(L, R) · 한쪽 논스톱형(NL, NR)"},{k:"조정",v:"상·하, 전·후, 좌·우 조정 가능 (K6200 · K8000 Premium)"},{k:"방수형",v:"K8000WP · IP68 · 3, 4, 5호"}],
+  stats:[{k:"취급 모델",v:"[[K6200]] · [[다코-K8300]] · [[KKK8300]] · [[K8300 양쪽정지형]] · [[K8300]] · [[K8500 양쪽정지형]] · [[K8500]]"},{k:"정지 각도",v:"90˚ · 115˚ (전 시리즈 공통)"},{k:"기본형",v:"양쪽 정지형"},{k:"옵션형",v:"양쪽 논스톱형(N) · 한쪽 정지형(L, R) · 한쪽 논스톱형(NL, NR)"},{k:"조정",v:"상·하, 전·후, 좌·우 조정 가능 (K6200 · K8000 Premium)"},{k:"방수형",v:"K8000WP · IP68 · 3, 4, 5호"}],
   videosTitle:"조절 방법 영상",
   videos:[
     {label:"문 센터 맞추기 (하부 플로어힌지 조절)",id:"5oBPTnXGcjk",start:0,title:"강화유리문 센터 맞추기 영상",by:""},
@@ -1084,17 +1085,17 @@ var PRODUCTS=[
   ],
   groups:[
     {
-      title:"취급 모델 계열 구분", note:"취급하는 7개 모델이 어느 시리즈에 속하는지 정리했습니다. 특징은 제공해 주신 제품 자료 기준입니다.",
+      title:"취급 모델 계열 구분", note:"형광펜 표시(노란 그라데이션)가 취급하는 모델입니다. 7개 모델이 어느 시리즈에 속하는지 정리했습니다. 특징은 제공해 주신 제품 자료 기준입니다.",
       items:[
-        {no:"①",name:"K6200 — 중급형",traitsLabel:"특징",traits:[
+        {no:"①",name:"[[K6200]] — 중급형",traitsLabel:"특징",traits:[
           "중급형 플로어힌지입니다.",
           "상·하, 전·후, 좌·우 조정이 가능합니다.",
           "1개의 밸브로 속도 조절이 가능합니다.",
           "정지 각도는 90˚, 115˚입니다.",
           "기본은 양쪽 정지형, 옵션은 양쪽 논스톱형(N)입니다."
         ],usesLabel:"용도",uses:["강화유리문, 스테인레스용","아파트, 상가, 빌딩 현관 등"]},
-        {no:"②",name:"K8000 Premium — 고급형 (K8300 · K8500)",traitsLabel:"특징",traits:[
-          "취급 모델: K8300, K8300 양쪽정지형, K8500, K8500 양쪽정지형",
+        {no:"②",name:"K8000 Premium — 고급형 ([[K8300]] · [[K8500]])",traitsLabel:"특징",traits:[
+          "취급 모델: [[K8300]], [[K8300 양쪽정지형]], [[K8500]], [[K8500 양쪽정지형]]",
           "고급형 플로어힌지로 대형 중량문에 적용합니다.",
           "상·하, 전·후, 좌·우 조정이 가능합니다.",
           "1차, 2차 속도 조절이 가능합니다.",
@@ -1110,12 +1111,12 @@ var PRODUCTS=[
           "기본은 양쪽 정지형, 옵션은 양쪽 논스톱형(N)입니다.",
           "방수 기능에 대한 특허를 취득했습니다. (No: 10-2019-0008583)"
         ],usesLabel:"용도",uses:["강화유리문, 스테인레스용","아파트, 상가빌딩, 사우나, 워터파크 등"]},
-        {no:"④",name:"KKK — K8000 Premium의 자매품 (KKK8300 · KKK8500)",traitsLabel:"특징",traits:[
-          "취급 모델: KKK8300",
+        {no:"④",name:"KKK — K8000 Premium의 자매품 ([[KKK8300]] · KKK8500)",traitsLabel:"특징",traits:[
+          "취급 모델: [[KKK8300]]",
           "K8000 Premium 시리즈의 자매품으로 정리된 제품입니다.",
           "제공된 자료에는 KKK 자체의 규격·특징 설명이 없습니다."
         ]},
-        {no:"⑤",name:"다코-K8300",traitsLabel:"특징",traits:[
+        {no:"⑤",name:"[[다코-K8300]]",traitsLabel:"특징",traits:[
           "취급 모델이지만 제공된 자료에 별도 설명이 없습니다.",
           "모델명으로는 K8300 계열로 보이나, 확인이 필요합니다."
         ]}
@@ -1124,7 +1125,7 @@ var PRODUCTS=[
     {
       title:"정지형 · 논스톱형 · 한쪽 · 양쪽 구분 (모델명 읽는 법)", note:"카탈로그 표의 모델명 기준입니다. K8300을 예로 들면 다음과 같습니다.",
       items:[
-        {no:"A",name:"양쪽 정지형 (기본)",traitsLabel:"모델명 예",traits:["K6200, K8300, K8400, K8500","정지 각도 90˚, 115˚"]},
+        {no:"A",name:"양쪽 정지형 (기본)",traitsLabel:"모델명 예",traits:["[[K6200]], [[K8300]], K8400, [[K8500]]","정지 각도 90˚, 115˚"]},
         {no:"B",name:"양쪽 논스톱형 (N)",traitsLabel:"모델명 예",traits:["K6200N, K8300N, K8400N, K8500N","K6200 · K8000WP · K8000 Premium 모두 옵션으로 있습니다."]},
         {no:"C",name:"한쪽 정지형 (L, R)",traitsLabel:"모델명 예",traits:["K8300L, K8300R (K8400, K8500도 같은 방식)","K8000 Premium 옵션입니다.","한쪽 정지형은 좌(L)·우(R)를 구분해야 합니다."]},
         {no:"D",name:"한쪽 논스톱형 (NL, NR)",traitsLabel:"모델명 예",traits:["K8300NL, K8300NR (K8400, K8500도 같은 방식)","K8000 Premium 옵션입니다."]}
@@ -1143,10 +1144,10 @@ var PRODUCTS=[
     }
   ],
   dims:[
-    {k:"K6200 · K6200N",v:"문 900 × 2,100mm · 40~65kg"},
-    {k:"K8300 · K8300N",v:"문 950 × 2,100mm · 60~85kg"},
+    {k:"[[K6200]] · K6200N",v:"문 900 × 2,100mm · 40~65kg"},
+    {k:"[[K8300]] · K8300N",v:"문 950 × 2,100mm · 60~85kg"},
     {k:"K8400 · K8400N (취급 목록 외)",v:"문 1,050 × 2,400mm · 80~120kg"},
-    {k:"K8500 · K8500N",v:"문 1,200 × 2,400mm · 100~150kg"},
+    {k:"[[K8500]] · K8500N",v:"문 1,200 × 2,400mm · 100~150kg"},
     {k:"K8000WP (K8300WP · K8400WP · K8500WP)",v:"K8300 · K8400 · K8500과 같은 크기·무게"},
     {k:"바디 케이스 K5000 · K6000",v:"L 300 × W 142 × H 52mm"},
     {k:"바디 케이스 K8000",v:"L 307 × W 162 × H 53mm"}
@@ -1154,10 +1155,10 @@ var PRODUCTS=[
   dimsNote:"제조사 2024 카탈로그 표 기준입니다. 문의 크기·무게는 각 모델에 맞는 문의 범위이고, 바디 케이스는 바닥에 묻는 본체 상자의 크기(L 길이 · W 폭 · H 높이)입니다.",
   galleryTitle:"제품 사진과 참고 자료",
   gallery:[
-    {title:"K8000 Premium (K8300 · K8500)",note:"위쪽 부품은 문 상단에 거는 상부 피벗이고, 아래쪽이 바닥에 묻는 본체입니다.",images:["img/floorhinge-k8300.webp"],maxWidth:"560px"},
+    {title:"K8000 Premium ([[K8300]] · [[K8500]])",note:"위쪽 부품은 문 상단에 거는 상부 피벗이고, 아래쪽이 바닥에 묻는 본체입니다.",images:["img/floorhinge-k8300.webp"],maxWidth:"560px"},
     {title:"K8000WP 방수형",note:"세계 최초 IP68 방수방진 등급 획득 방수형 힌지 (K8000WP Series)",images:["img/floorhinge-k8300wp.webp"],maxWidth:"560px"},
-    {title:"카탈로그 원본 표 — K6200 · K6200N",note:"양쪽 정지형 · 양쪽 논스톱형 모델명과 문의 크기·무게입니다.",images:["img/floorhinge-table-k6200.webp"],maxWidth:"383px"},
-    {title:"카탈로그 원본 표 — K8300 · K8400 · K8500",note:"양쪽·한쪽 정지형, 논스톱형 모델명과 문의 크기·무게입니다.",images:["img/floorhinge-table-premium.webp"],maxWidth:"388px"},
+    {title:"카탈로그 원본 표 — [[K6200]] · K6200N",note:"양쪽 정지형 · 양쪽 논스톱형 모델명과 문의 크기·무게입니다.",images:["img/floorhinge-table-k6200.webp"],maxWidth:"383px"},
+    {title:"카탈로그 원본 표 — [[K8300]] · K8400 · [[K8500]]",note:"양쪽·한쪽 정지형, 논스톱형 모델명과 문의 크기·무게입니다.",images:["img/floorhinge-table-premium.webp"],maxWidth:"388px"},
     {title:"카탈로그 원본 표 — 바디 케이스 크기",note:"K5000 · K6000 · K8000 · K9000 시리즈 본체 상자의 크기(mm)입니다.",images:["img/floorhinge-table-body.webp"],maxWidth:"379px"},
     {title:"카탈로그 원본 — IP68 등급이란?",note:"K8000WP 방수 등급 설명입니다.",images:["img/floorhinge-ip68.webp"],maxWidth:"386px"},
     {title:"한쪽 정지형 · 자유형 좌·우 구분",note:"카탈로그의 FLOOR HINGE 기술사양 도면입니다. 문이 열리는 모양에 따라 우(R)·좌(L)를 구분합니다.",images:["img/floorhinge-lr-guide.webp"],maxWidth:"388px"},
@@ -2548,7 +2549,7 @@ function buildDetail(p){
   if(p.links)h+="<div class='sec'><h3>"+esc(p.linksTitle||'제품 홈페이지')+"</h3><div class='linkrow'>"+p.links.map(function(l){return "<a class='linkbtn' href='"+esc(l.url)+"' target='_blank' rel='noopener noreferrer'>"+esc(l.label)+" <span>↗</span></a>";}).join("")+"</div></div>";
   if(p.faq)h+="<div class='sec'><h3>자주 묻는 질문 (Q&A)</h3><div class='faq'>"+p.faq.map(function(x){return "<div class='qa'><div class='q'><span class='mk'>Q</span><span>"+esc(x.q)+"</span></div><div class='a'><span class='mk'>A</span><span>"+esc(x.a)+(x.t!=null&&(x.v||p.video)?"<br><a class='tl' target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v="+esc(x.v||p.video.id)+"&t="+x.t+"s'>▶ 영상 "+('0'+Math.floor(x.t/60)).slice(-2)+":"+('0'+x.t%60).slice(-2)+" 부분 보기</a>":"")+"</span></div></div>";}).join("")+"</div></div>";
   if(p.cautions&&p.cautions.length)h+="<div class='sec'><h3>주의사항</h3><ul class='cautions'>"+p.cautions.map(function(c){return "<li>"+esc(c)+"</li>";}).join("")+"</ul>"+(p.confirmNote?"<div class='confirm'><b>확인 필요</b> — "+esc(p.confirmNote)+"</div>":"")+"</div>";
-  return h;
+  return h.replace(/\[\[(.+?)\]\]/g,"<span class='hit'>$1</span>");
 }
 var overlay=document.getElementById('overlay'),detail=document.getElementById('detail'),detailBody=document.getElementById('detailBody');
 /* 화질 보호: 이미지를 원본 크기보다 크게 늘려 보여주지 않는다 (흐려짐 방지) */
